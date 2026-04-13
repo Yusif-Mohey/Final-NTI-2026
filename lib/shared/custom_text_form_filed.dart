@@ -9,7 +9,11 @@ class CustomTextFormField extends StatefulWidget {
     this.controller,
     this.onTapPasswordView,
     this.validator,
+    // this.label,
+    // required this.sufixx,
   });
+  // final sufixx;
+  // final String? label;
   final String hintText;
   final TextEditingController? controller;
   final void Function()? onTapPasswordView;
