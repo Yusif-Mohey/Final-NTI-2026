@@ -3,18 +3,21 @@ import 'package:flutter_application_1/constants/app_colors.dart';
 // import 'package:nti_final/constants/app_colors.dart';
 
 class CustomTextFormField extends StatefulWidget {
-  const CustomTextFormField({
+  CustomTextFormField({
     super.key,
     required this.hintText,
     this.controller,
     this.onTapPasswordView,
     this.validator,
+
+    required this.obscurePassword,
     // this.label,
     // required this.sufixx,
   });
   // final sufixx;
   // final String? label;
   final String hintText;
+  bool obscurePassword = false;
   final TextEditingController? controller;
   final void Function()? onTapPasswordView;
   final FormFieldValidator<String>? validator;
@@ -24,7 +27,6 @@ class CustomTextFormField extends StatefulWidget {
 }
 
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
-  bool _obscurePassword = true;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -34,7 +36,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       obscureText:
           widget.hintText.toLowerCase() == 'password' ||
               widget.hintText.toLowerCase() == 'confirm password'
-          ? _obscurePassword
+          ? widget.obscurePassword
           : false,
       decoration: InputDecoration(
         filled: true,
@@ -47,12 +49,14 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                     widget.onTapPasswordView!();
                   } else {
                     setState(() {
-                      _obscurePassword = !_obscurePassword;
+                      widget.obscurePassword = !widget.obscurePassword;
                     });
                   }
                 },
                 icon: Icon(
-                  _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                  widget.obscurePassword
+                      ? Icons.visibility_off
+                      : Icons.visibility,
                   color: AppColors.primary,
                 ),
               )

@@ -1,159 +1,111 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app_data.dart';
+import 'package:flutter_application_1/features/auth/signup/signup_screen.dart';
+import 'package:flutter_application_1/shared/custom_app_button.dart';
 import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
-import 'package:gap/gap.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
+  static String id = 'Loginpage';
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-
-  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Center(
-        child: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(height: 80),
               Text(
-                "Welcom Back ",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                'Sign In',
+
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
-              Gap(10),
-              Text(
-                "Login to your account",
-                style: TextStyle(color: Colors.grey),
+              SizedBox(height: 5),
+              Align(
+                alignment: Alignment.topCenter,
+                child: Text(
+                  'Hi Welcom back, You have been missed',
+
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54,
+                  ),
+                ),
               ),
-              Gap(30),
+              SizedBox(height: 50),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text('Email', style: TextStyle(fontSize: 20)),
+              ),
               CustomTextFormField(
-                // sufixx: Icon(Icons.email),
-                // label: "Email",
-                hintText: "Email",
-                controller: _emailController,
+                hintText: 'Example@gmail.com',
+                obscurePassword: false,
               ),
-              Gap(10),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.topLeft,
+
+                child: Text('password', style: TextStyle(fontSize: 20)),
+              ),
               CustomTextFormField(
-                // sufixx: Icon(Icons.password),
-                // label: "Password",
-                hintText: "Password",
-                controller: _passwordController,
-              ),
-              Gap(30),
-
-              ElevatedButton(
-                onPressed: () {
-                  AppData.login(
-                    _emailController.text.trim(),
-                    _passwordController.text.trim(),
-                  );
-                },
-                child: SizedBox(
-                  width: double.infinity,
-                  child: Column(children: [Text("login")]),
-                ),
-              ),
-              Gap(10),
-              ElevatedButton(
-                onPressed: () {
-                  AppData.signinGoogle();
-                },
-                child: SizedBox(
-                  width: double.infinity,
-                  child: Column(children: [Text("Signin With Google")]),
-                ),
+                hintText: 'Enter Your password',
+                obscurePassword: false,
               ),
 
-              Gap(10),
-
-              ElevatedButton(
-                onPressed: () {},
-                child: SizedBox(
-                  width: double.infinity,
-                  child: Column(children: [Text("Forget your Password")]),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Forget password?',
+                  style: TextStyle(
+                    color: Colors.deepPurpleAccent,
+                    fontSize: 20,
+                  ),
                 ),
+              ),
+              SizedBox(height: 10),
+              CustomAppButton(text: 'sign in', onTap: () {}),
+              SizedBox(height: 15),
+              CustomAppButton(text: 'Sign in with Google', onTap: () {}),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Dont have an account ?',
+                    style: TextStyle(color: Colors.black, fontSize: 18),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignupScreen()),
+                      );
+                    },
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: Colors.deepPurpleAccent,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 15),
+                ],
               ),
             ],
           ),
         ),
       ),
-      // children: [
-      //   // Gap(30),
-      //   // CustomTextFormField(hintText: " Enter your email"),
-      //   // Gap(20),
-      //   // CustomTextFormField(hintText: "Enter your Password",),
-      //   SizedBox(height: 20),
-      //   TextField(
-      //     controller: _emailController,
-      //     decoration: InputDecoration(
-      //       border: OutlineInputBorder(),
-      //       prefixIcon: Icon(Icons.email),
-      //       hintText: ("Enter your Email"),
-      //     ),
-      //   ),
-      // SizedBox(height: 20),
-      // TextField(
-      //   obscureText: true,
-      //   controller: _passwordController,
-      //   decoration: InputDecoration(
-      //     border: OutlineInputBorder(),
-      //     prefixIcon: Icon(Icons.password),
-      //     hintText: ("Enter your Password"),
-      //   ),
-      // ),
-
-      // Gap(10),
-      // ElevatedButton(
-      //   onPressed: () {
-      //     AppData.login(
-      //       _emailController.text.trim(),
-      //       _passwordController.text.trim(),
-      //     );
-      //   },
-
-      //   child: SizedBox(width: 50, child: Column(children: [Text("login")])),
-      // ),
-
-      // Gap(10),
-      // ElevatedButton(
-      //   onPressed: () {
-      //    ... // AppData.Register(
-      //    ... //   _emailController.text.trim(),
-      //    ... //   _passwordController.text.trim(),
-      //    ... // );
-      //     AppData.signinGoogle();
-      //   },
-
-      //   child: SizedBox(width: 50, child: Column(children: [Text("Add")])),
-      // ),
-
-      // Gap(20),
-      // ElevatedButton(onPressed: () {}, child: Text("Forget your Password?")),
-      // ....// CustomAppButton(
-      //   text: "Forget Password",
-      //   textColor: Colors.white,
-      //   onTap: () {},
-      //   width: 30,
-      //   height: 5,
-      // ),
-      // Gap(30),
-      // CustomAppButton(
-      //   text: "login",
-      //   textColor: Colors.white,
-      //   onTap: () {},
-
-      //   width: 30,
-      //   height: 5,
-      // ),
-
-      // ],
     );
   }
 }
