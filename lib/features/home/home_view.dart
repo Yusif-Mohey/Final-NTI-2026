@@ -5,6 +5,17 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            color: Color(0xFF773fff),
+           
+            height: 250,
+            width: double.infinity,
+          )
+        ],
+      ),
+    );
   }
 }
