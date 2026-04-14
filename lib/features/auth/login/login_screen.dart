@@ -83,6 +83,9 @@ class _LoginScreenState extends State<LoginScreen> {
               Gap(30),
 
               ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Color(0xff753EFB)),
+                ),
                 onPressed: () {
                   _formkey.currentState?.validate();
                   AppData.Signin(
@@ -92,7 +95,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 child: SizedBox(
                   width: double.infinity,
-                  child: Column(children: [Text("Sign in")]),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Sign in",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Gap(30),
@@ -104,37 +116,64 @@ class _LoginScreenState extends State<LoginScreen> {
                   Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      border: Border.all(),
+                      color: Color(0xff753EFB),
+                      // border: Border.all(),
                       borderRadius: BorderRadius.circular(100),
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(LineIcons.googlePlusG),
+                      icon: Icon(
+                        LineIcons.googlePlusG,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      border: Border.all(),
+                      color: Color(0xff753EFB),
+                      // border: Border.all(),
                       borderRadius: BorderRadius.circular(100),
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(LineIcons.facebook, size: 25),
+                      icon: Icon(
+                        LineIcons.facebook,
+                        size: 25,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      border: Border.all(),
+                      color: Color(0xff753EFB),
+                      // border: Border.all(),
                       borderRadius: BorderRadius.circular(200),
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(LineIcons.twitter),
+                      icon: Icon(
+                        LineIcons.twitter,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
                   ),
                 ],
+              ),
+              Gap(25),
+              Center(
+                child: Text.rich(
+                  TextSpan(
+                    text: "Don't have an account?",
+                    children: [
+                      TextSpan(
+                        text: "SignUp",
+                        style: TextStyle(color: Color(0xff753EFB)),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),

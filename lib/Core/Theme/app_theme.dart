@@ -48,7 +48,7 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
-        secondary: AppColors.secondaryDark,
+        // secondary: AppColors.secondaryDark,
         surface: Color(0xFF1E1E1E),
         error: AppColors.error,
         onPrimary: Colors.white,

@@ -70,7 +70,7 @@ class _SplashViewState extends State<SplashView>
             opacity: _logoFade,
             child: ScaleTransition(
               scale: _logoScale,
-              child: SvgPicture.asset(''),
+              child: SvgPicture.asset('assests/9tsVr01.svg'),
             ),
           ),
 
@@ -79,7 +79,11 @@ class _SplashViewState extends State<SplashView>
           /// Bottom Image Animation
           SlideTransition(
             position: _imageSlide,
-            child: Image.asset('', width: double.infinity, fit: BoxFit.cover),
+            child: SvgPicture.asset(
+              'assests/9tsVr01.svg',
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),
