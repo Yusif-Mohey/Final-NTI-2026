@@ -1,105 +1,139 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/auth/signup/signup_screen.dart';
-import 'package:flutter_application_1/shared/custom_app_button.dart';
+import 'package:flutter_application_1/app_data.dart';
 import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
+import 'package:gap/gap.dart';
+import 'package:line_icons/line_icons.dart';
 
-class LoginScreen extends StatelessWidget {
-  static String id = 'Loginpage';
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _formkey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  Dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+    return Padding(
+      padding: const EdgeInsets.all(30),
 
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 80),
-              Text(
-                'Sign In',
-
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-              SizedBox(height: 5),
-              Align(
-                alignment: Alignment.topCenter,
+              Center(
                 child: Text(
-                  'Hi Welcom back, You have been missed',
-
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black54,
-                  ),
+                  "Sign in  ",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 50),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Text('Email', style: TextStyle(fontSize: 20)),
-              ),
-              CustomTextFormField(
-                hintText: 'Example@gmail.com',
-                obscurePassword: false,
-              ),
-              SizedBox(height: 20),
-              Align(
-                alignment: Alignment.topLeft,
-
-                child: Text('password', style: TextStyle(fontSize: 20)),
-              ),
-              CustomTextFormField(
-                hintText: 'Enter Your password',
-                obscurePassword: false,
-              ),
-
-              Align(
-                alignment: Alignment.centerRight,
+              Gap(10),
+              Center(
                 child: Text(
-                  'Forget password?',
-                  style: TextStyle(
-                    color: Colors.deepPurpleAccent,
-                    fontSize: 20,
-                  ),
+                  "Hi! Welcom back,you've been missed ",
+                  style: TextStyle(color: Colors.grey),
                 ),
               ),
-              SizedBox(height: 10),
-              CustomAppButton(text: 'sign in', onTap: () {}),
-              SizedBox(height: 15),
-              CustomAppButton(text: 'Sign in with Google', onTap: () {}),
+              Gap(30),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
                 children: [
-                  Text(
-                    'Dont have an account ?',
-                    style: TextStyle(color: Colors.black, fontSize: 18),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignupScreen()),
-                      );
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: Colors.deepPurpleAccent,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  Form(
+                    key: _formkey,
+                    child: Column(
+                      children: [
+                        CustomTextFormField(
+                          obscurePassword: false,
+                          validator: (Value) {
+                            if (Value!.isEmpty) {
+                              return "Email can't be empty";
+                            }
+                            return null;
+                          },
+                          hintText: "Email",
+                          controller: _emailController,
+                        ),
+                        Gap(30),
+                        CustomTextFormField(
+                          obscurePassword: false,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Password can't be empty";
+                            }
+                            return null;
+                          },
+                          hintText: "Password",
+                          controller: _passwordController,
+                        ),
+                      ],
                     ),
                   ),
+                ],
+              ),
+              Gap(30),
 
-                  SizedBox(height: 15),
+              ElevatedButton(
+                onPressed: () {
+                  _formkey.currentState?.validate();
+                  AppData.Signin(
+                    _emailController.text.trim(),
+                    _passwordController.text.trim(),
+                  );
+                },
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Column(children: [Text("Sign in")]),
+                ),
+              ),
+              Gap(30),
+              Center(child: Text("Or sign in with ")),
+              Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(LineIcons.googlePlusG),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(LineIcons.facebook, size: 25),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.circular(200),
+                    ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(LineIcons.twitter),
+                    ),
+                  ),
                 ],
               ),
             ],
