@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/onboard/first_screen.dart';
-import 'package:flutter_application_1/onboard/second_screen.dart';
-import 'package:flutter_application_1/onboard/third_screen.dart';
+import 'package:flutter_application_1/features/auth/login/login_screen.dart';
+import 'package:flutter_application_1/features/onboard/first_screen.dart';
+import 'package:flutter_application_1/features/onboard/second_screen.dart';
+import 'package:flutter_application_1/features/onboard/third_screen.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
@@ -61,6 +62,16 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 ),
                 InkWell(
                   onTap: () {
+                    if (index == 2) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return Scaffold(body: LoginScreen());
+                          },
+                        ),
+                      );
+                    }
                     controller.animateToPage(
                       index + 1,
                       duration: Duration(microseconds: 250),
