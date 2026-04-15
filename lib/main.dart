@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        body: ProfileView(),
+        body: LoginScreen(),
       ),
     );
   }

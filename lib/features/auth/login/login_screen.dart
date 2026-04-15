@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_data.dart';
+import 'package:flutter_application_1/features/auth/signup/signup_screen.dart';
 import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
 import 'package:gap/gap.dart';
 import 'package:line_icons/line_icons.dart';
@@ -168,6 +170,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: "Don't have an account?",
                     children: [
                       TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return SignupScreen();
+                                  },
+                                ),
+                              );
+                            });
+                          },
                         text: "SignUp",
                         style: TextStyle(color: Color(0xff753EFB)),
                       ),
