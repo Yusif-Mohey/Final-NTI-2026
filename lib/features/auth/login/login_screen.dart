@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_data.dart';
+import 'package:flutter_application_1/features/auth/signup/signup_screen.dart';
 import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
 import 'package:gap/gap.dart';
 import 'package:line_icons/line_icons.dart';
@@ -162,15 +163,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
               Gap(25),
-              Center(
-                child: Text.rich(
-                  TextSpan(
-                    text: "Don't have an account?",
+
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignupScreen()),
+                  );
+                },
+
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      TextSpan(
-                        text: "SignUp",
-                        style: TextStyle(color: Color(0xff753EFB)),
-                      ),
+                      Center(child: Text("Don't have an account? Sign Up")),
                     ],
                   ),
                 ),
