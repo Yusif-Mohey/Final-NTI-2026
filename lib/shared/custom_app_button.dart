@@ -32,7 +32,7 @@ class CustomAppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width ?? 180,
+        width: double.infinity,
         height: height ?? 60,
         decoration: BoxDecoration(
           border: borderColor != null ? Border.all(color: borderColor!) : null,
