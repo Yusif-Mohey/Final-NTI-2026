@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/auth/Notifiication/location.dart';
 import 'package:flutter_application_1/features/auth/login/login_screen.dart';
-import 'package:flutter_application_1/features/auth/signup/signup_screen.dart';
 
-import 'package:flutter_application_1/features/home/home_view.dart';
-import 'package:flutter_application_1/features/profile/profile_view.dart';
+
+
 
 import 'package:flutter_application_1/firebase_options.dart';
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body:
-          LoginScreen()
+         LocationScreen()
       ),
     );
   }
