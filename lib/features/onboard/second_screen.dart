@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 
-class ThirdScreen extends StatelessWidget {
-  const ThirdScreen({super.key});
+class SecondScreen extends StatelessWidget {
+  const SecondScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,24 +16,24 @@ class ThirdScreen extends StatelessWidget {
           child: Center(
             child: Text.rich(
               TextSpan(
-                text: "Track Your \n",
+                text: "Save Your ",
                 style: TextStyle(fontSize: 30, color: Colors.black),
                 children: [
-                  TextSpan(text: "Parking "),
                   TextSpan(
-                    text: "Booking",
+                    text: "Favorit \n ",
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 188, 49, 44),
+                      color: AppColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  TextSpan(text: " Parking Spots"),
                 ],
               ),
             ),
           ),
         ),
         Text(
-          "Track your active bookings\n  and get real-time updates",
+          "Keep your go-to parking spots \n  saved for quick and easy access",
           style: TextStyle(fontSize: 20),
         ),
       ],

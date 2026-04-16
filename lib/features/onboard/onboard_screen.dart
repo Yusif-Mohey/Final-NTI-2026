@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/onboard/first_screen.dart';
-import 'package:flutter_application_1/onboard/second_screen.dart';
-import 'package:flutter_application_1/onboard/third_screen.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
+import 'package:flutter_application_1/features/auth/login/login_screen.dart';
+import 'package:flutter_application_1/features/onboard/first_screen.dart';
+import 'package:flutter_application_1/features/onboard/second_screen.dart';
+import 'package:flutter_application_1/features/onboard/third_screen.dart';
 
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
@@ -32,8 +34,8 @@ class _OnboardScreenState extends State<OnboardScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(width: 10),
-              CustomIndicator(active: index == 0),
+              SizedBox(width: 10), // gap
+              CustomIndicator(active: index == 0), //
               SizedBox(width: 10),
               CustomIndicator(active: index == 1),
               SizedBox(width: 10),
@@ -46,6 +48,16 @@ class _OnboardScreenState extends State<OnboardScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return LoginScreen();
+                        },
+                      ),
+                    );
+                  },
                   child: Container(
                     padding: EdgeInsets.all(10),
 
@@ -61,16 +73,27 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 ),
                 InkWell(
                   onTap: () {
+                    if (index == 2) {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return LoginScreen();
+                          },
+                        ),
+                      );
+                    }
+
                     controller.animateToPage(
                       index + 1,
-                      duration: Duration(microseconds: 250),
+                      duration: Duration(milliseconds: 250),
                       curve: Curves.linear,
                     );
                   },
                   child: Container(
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 221, 118, 118),
+                      color: AppColors.primary,
                       borderRadius: BorderRadius.circular(20),
                     ),
 
@@ -103,7 +126,7 @@ class CustomIndicator extends StatelessWidget {
       duration: Duration(microseconds: 250),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
-        color: active ? const Color.fromARGB(255, 221, 118, 118) : Colors.grey,
+        color: active ? AppColors.primary : Colors.grey,
       ),
       width: active ? 30 : 10,
       height: 10,

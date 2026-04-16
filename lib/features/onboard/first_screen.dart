@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +16,13 @@ class SecondScreen extends StatelessWidget {
           child: Center(
             child: Text.rich(
               TextSpan(
-                text: "Save Your ",
+                text: "Find ",
                 style: TextStyle(fontSize: 30, color: Colors.black),
                 children: [
                   TextSpan(
-                    text: "Favorit \n ",
+                    text: "Nearby \n ",
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 188, 49, 44),
+                      color: AppColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -32,7 +33,7 @@ class SecondScreen extends StatelessWidget {
           ),
         ),
         Text(
-          "Keep your go-to parking spots \n  saved for quick and easy access",
+          "Discover availabele parking spots\n  around you in real-time.",
           style: TextStyle(fontSize: 20),
         ),
       ],

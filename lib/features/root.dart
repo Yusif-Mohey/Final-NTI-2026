@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_colors.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 import 'package:flutter_application_1/features/home/home_view.dart';
-import 'package:flutter_application_1/features/profile/profile_view.dart';
+// import 'package:flutter_application_1/features/profile/profile_view.dart';
 // import 'package:nti_final/constants/app_colors.dart';
 // import 'package:nti_final/features/home/home_view.dart';
 // import 'package:nti_final/features/profile/profile_view.dart';
@@ -19,7 +19,7 @@ class _RootState extends State<Root> {
   int currentPage = 0;
   @override
   void initState() {
-    screen = [HomeView(), ProfileView()];
+    screen = [HomeView()];
     ////  1
     print('slam 3alekom');
     super.initState();
@@ -54,7 +54,18 @@ class _RootState extends State<Root> {
                 icon: Icon(CupertinoIcons.home),
                 label: 'Home',
               ),
-
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.square_favorites),
+                label: 'Fav',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.location_circle_fill),
+                label: 'Explore',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.list_bullet),
+                label: 'Booking',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.person),
                 label: 'Profile',

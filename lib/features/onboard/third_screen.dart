@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
+class ThirdScreen extends StatelessWidget {
+  const ThirdScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,24 +16,24 @@ class FirstScreen extends StatelessWidget {
           child: Center(
             child: Text.rich(
               TextSpan(
-                text: "Find ",
+                text: "Track Your \n",
                 style: TextStyle(fontSize: 30, color: Colors.black),
                 children: [
+                  TextSpan(text: "Parking "),
                   TextSpan(
-                    text: "Nearby \n ",
+                    text: "Booking",
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 188, 49, 44),
+                      color: AppColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  TextSpan(text: " Parking Spots"),
                 ],
               ),
             ),
           ),
         ),
         Text(
-          "Discover availabele parking spots\n  around you in real-time.",
+          "Track your active bookings\n  and get real-time updates",
           style: TextStyle(fontSize: 20),
         ),
       ],
