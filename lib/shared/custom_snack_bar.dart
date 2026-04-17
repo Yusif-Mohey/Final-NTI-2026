@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'custom_text.dart';
 
@@ -18,7 +19,7 @@ SnackBar customSnack(String errorMsg, {bool state = true}) {
           CustomText(
             text: errorMsg,
             color: Colors.white,
-            fontSize: 10,
+            fontSize: 10.sp,
             // fontWeight: FontWeight.w600,
           ),
         ],

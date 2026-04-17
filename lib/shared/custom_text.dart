@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
@@ -24,11 +25,11 @@ class CustomText extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final responsiveFontSize =
         fontSize ??
-        (screenWidth > 600
-            ? 16
-            : screenWidth > 400
-            ? 14
-            : 12);
+        (screenWidth > 600.w
+            ? 16.sp
+            : screenWidth > 400.w
+            ? 14.sp
+            : 12.sp);
 
     return Padding(
       padding: padding ?? EdgeInsets.zero,

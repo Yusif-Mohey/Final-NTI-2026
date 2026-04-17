@@ -9,4 +9,5 @@ class AppColors {
   static const Color error = Color(0xFFB00020);
   static const Color textPrimary = Color(0xFF212121);
   static const Color textSecondary = Color(0xFF757575);
+  static const Color icon = Color.fromARGB(255, 255, 190, 59);
 }

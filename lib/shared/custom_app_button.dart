@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_colors.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 import 'package:flutter_application_1/shared/custom_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 // import 'package:nti_final/constants/app_colors.dart';
 // import 'package:nti_final/shared/custom_text.dart';
@@ -32,8 +33,8 @@ class CustomAppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width ?? 180,
-        height: height ?? 60,
+        width: width ?? 180.w,
+        height: height ?? 60.h,
         decoration: BoxDecoration(
           border: borderColor != null ? Border.all(color: borderColor!) : null,
           color: btnColor ?? AppColors.primary,
@@ -52,7 +53,7 @@ class CustomAppButton extends StatelessWidget {
                     CustomText(
                       text: text ?? '',
                       color: textColor ?? Colors.white,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                     ),
                     Gap(20),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/constants/app_colors.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 import 'package:flutter_application_1/shared/custom_text.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:nti_final/constants/app_colors.dart';
 // import 'package:nti_final/shared/custom_text.dart';
 
@@ -13,7 +14,7 @@ class CustomAuthButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 50,
+        height: 50.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.0),
@@ -22,7 +23,7 @@ class CustomAuthButton extends StatelessWidget {
           child: CustomText(
             text: text,
             color: AppColors.primary,
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.bold,
           ),
         ),
