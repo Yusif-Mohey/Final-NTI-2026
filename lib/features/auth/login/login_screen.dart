@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/shared/custom_snack_bar.dart';
 import 'package:flutter_application_1/app_data.dart';
@@ -7,7 +6,6 @@ import 'package:flutter_application_1/Core/shared/custom_text_form_filed.dart';
 import 'package:flutter_application_1/features/auth/socail_auth.dart';
 import 'package:flutter_application_1/features/home/home_view.dart';
 import 'package:gap/gap.dart';
-import 'package:line_icons/line_icons.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

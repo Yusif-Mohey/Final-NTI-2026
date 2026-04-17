@@ -28,7 +28,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 });
               },
               controller: controller,
-              children: [FirstScreen(), SecondScreen(), ThirdScreen()],
+              // children: [FirstScreen(), SecondScreen(), ThirdScreen()],
             ),
           ),
           Row(
@@ -79,6 +79,8 @@ class _OnboardScreenState extends State<OnboardScreen> {
                         MaterialPageRoute(
                           builder: (context) {
                             return LoginScreen();
+
+                            // return Scaffold(body: LoginScreen());
                           },
                         ),
                       );

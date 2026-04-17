@@ -1,10 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/auth/login/login_screen.dart';
-import 'package:flutter_application_1/features/profile/profile_view.dart';
-import 'package:flutter_application_1/features/spalsh/splash_view.dart';
+import 'package:flutter_application_1/features/root.dart';
 import 'package:flutter_application_1/firebase_options.dart';
-import 'package:flutter_application_1/features/onboard/onboard_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      home: Root(),
 
-      home:
-          // LoginScreen(),
-          Scaffold(body: OnboardScreen()),
+      // home:
+      // LoginScreen(),
+      // Scaffold(body: OnboardScreen()),
     );
   }
 }

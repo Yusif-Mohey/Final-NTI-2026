@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Booking/my_booking.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
+import 'package:flutter_application_1/favorite/favorite_screen.dart';
 import 'package:flutter_application_1/features/home/home_view.dart';
 // import 'package:flutter_application_1/features/profile/profile_view.dart';
 // import 'package:nti_final/constants/app_colors.dart';
@@ -19,7 +21,7 @@ class _RootState extends State<Root> {
   int currentPage = 0;
   @override
   void initState() {
-    screen = [HomeView()];
+    screen = [HomeView(), FavoriteScreen(), BookingScreen()];
     ////  1
     print('slam 3alekom');
     super.initState();
@@ -58,10 +60,10 @@ class _RootState extends State<Root> {
                 icon: Icon(CupertinoIcons.square_favorites),
                 label: 'Fav',
               ),
-              BottomNavigationBarItem(
-                icon: Icon(CupertinoIcons.location_circle_fill),
-                label: 'Explore',
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(CupertinoIcons.location_circle_fill),
+              //   label: 'Explore',
+              // ),
               BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.list_bullet),
                 label: 'Booking',

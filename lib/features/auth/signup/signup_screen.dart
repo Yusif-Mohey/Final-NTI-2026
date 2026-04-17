@@ -1,144 +1,144 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Core/shared/custom_snack_bar.dart';
-import 'package:flutter_application_1/app_data.dart';
-import 'package:flutter_application_1/features/auth/login/login_screen.dart';
+import 'package:flutter_application_1/Core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/Core/shared/custom_text_form_filed.dart';
+import 'package:flutter_application_1/features/auth/login/login_screen.dart';
 import 'package:flutter_application_1/features/auth/socail_auth.dart';
 import 'package:gap/gap.dart';
 
 class SignupScreen extends StatelessWidget {
   static String id = 'Signuppage';
+
   const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final _email = TextEditingController();
-    final _password = TextEditingController();
-    final _name = TextEditingController();
-    return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+    final email = TextEditingController();
+    final password = TextEditingController();
+    final name = TextEditingController();
 
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
-          child: Center(
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                Padding(padding: EdgeInsetsGeometry.all(30)),
-                Text(
-                  'Create Account',
+                 SizedBox(height: 40),
 
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                 Text(
+                  "Create Account",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                Gap(10),
-                Align(
-                  alignment: Alignment.center,
+
+                 Gap(10),
+
+                 Text(
+                  "Fill your information below or register\nwith your social account",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                ),
+
+                 Gap(40),
+
+                 Align(
+                  alignment: Alignment.centerLeft,
                   child: Text(
-                    'fall your information below or register \n with your social acount',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey,
-                    ),
+                    "Name",
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
 
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text('Name', style: TextStyle(fontSize: 15)),
+                 Gap(8),
+
+                CustomTextFormField(
+                  controller: name,
+                  hintText: "Ex. John Doe",
+                  obscurePassword: false,
                 ),
-                Padding(
-                  padding: EdgeInsetsGeometry.all(15),
-                  child: CustomTextFormField(
-                    hintText: 'your name',
-                    obscurePassword: true,
+
+                 Gap(20),
+
+                 Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Email",
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
 
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text('Email', style: TextStyle(fontSize: 15)),
-                ),
-                Padding(
-                  padding: EdgeInsetsGeometry.all(15),
-                  child: CustomTextFormField(
-                    hintText: 'Example@gmail.com',
+                 Gap(8),
 
-                    obscurePassword: true,
+                CustomTextFormField(
+                  controller: email,
+                  hintText: "example@gmail.com",
+                  obscurePassword: false,
+                ),
+
+                 Gap(20),
+
+                 Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Password",
+                    style: TextStyle(fontSize: 16),
                   ),
                 ),
 
-                Align(
-                  alignment: Alignment.topLeft,
+                 Gap(8),
 
-                  child: Text('password', style: TextStyle(fontSize: 15)),
-                ),
-                Padding(
-                  padding: EdgeInsetsGeometry.all(15),
-                  child: CustomTextFormField(
-                    obscurePassword: false,
-
-                    hintText: "Password",
-                  ),
-                ),
-                Gap(20),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      Color(0xff753EFB),
-                    ),
-                  ),
-                  onPressed: () {
-                    // AppData.register(_email, _password);
-                    // and Navigation
-                    print('Good Man');
-                    customSnack('Wowwwwwwwwwwwwwwww');
-                  },
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Column(
-                      children: [
-                        Text(
-                          "Sign up",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                CustomTextFormField(
+                  controller: password,
+                  hintText: "Enter your password",
+                  obscurePassword: true,
                 ),
 
-                Gap(20),
+                 Gap(30),
+
+                CustomAppButton(
+                  text: "Sign Up",
+                  onTap: () {},
+                ),
+
+                 Gap(15),
+
                 SoicalAuth(),
-                Gap(40),
+
+                 Gap(30),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Aready have an acount?',
-                      style: TextStyle(color: Colors.black, fontSize: 16),
+                     Text(
+                      "Already have an account? ",
+                      style: TextStyle(fontSize: 15),
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
+                            builder: (context) => const LoginScreen(),
                           ),
                         );
                       },
-                      child: Text(
-                        'Sign In',
+                      child:  Text(
+                        "Sign In",
                         style: TextStyle(
-                          color: Colors.deepPurpleAccent,
-                          fontSize: 16,
+                          color: Colors.deepPurple,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                   ],
                 ),
+
+                 SizedBox(height: 30),
               ],
             ),
           ),
