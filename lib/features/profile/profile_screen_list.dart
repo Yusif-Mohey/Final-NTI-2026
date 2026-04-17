@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
-import 'package:flutter_application_1/features/profile/profile_view.dart';
+
 import 'package:flutter_application_1/features/root.dart';
 import 'package:flutter_application_1/shared/cutom_progileitem.dart.dart';
 
@@ -25,7 +25,8 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
           style: TextStyle(color: AppColors.textPrimary, fontSize: 40),
         ),
       ),
-      body: SingleChildScrollView(
+      body: 
+      SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.all(50),
@@ -53,10 +54,7 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
               Gap(20),
               ProfileItem(
                 ontap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfileView()),
-                  );
+                 
                 },
                 text: 'Your profile',
                 icon: Icons.person,
@@ -79,7 +77,7 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
           ),
         ),
       ),
-      bottomNavigationBar: Root(),
+      // bottomNavigationBar: Root(),
     );
   }
 }

@@ -1,14 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/profile/profile_screen_list.dart';
 
-import 'package:flutter_application_1/features/profile/profile_view.dart';
+
+
+import 'package:flutter_application_1/features/root.dart';
 
 
 
 
 import 'package:flutter_application_1/firebase_options.dart';
-import 'package:flutter_application_1/shared/cutom_progileitem.dart.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,8 +27,10 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body:
-       
-       ProfileScreenList()
+       Root()
+      
+
+      //  ProfileScreenList()
         //  LocationScreen()
       ),
     );
