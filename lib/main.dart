@@ -8,7 +8,7 @@ import 'package:flutter_application_1/features/profile/profile_view.dart';
 
 
 import 'package:flutter_application_1/firebase_options.dart';
-import 'package:flutter_application_1/shared/customCard.dart';
+import 'package:flutter_application_1/shared/cutom_progileitem.dart.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

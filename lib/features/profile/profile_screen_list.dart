@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 import 'package:flutter_application_1/features/profile/profile_view.dart';
 import 'package:flutter_application_1/features/root.dart';
-import 'package:flutter_application_1/shared/customCard.dart';
+import 'package:flutter_application_1/shared/cutom_progileitem.dart.dart';
 
 import 'package:gap/gap.dart';
 
@@ -51,7 +51,7 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
                 ),
               ),
               Gap(20),
-              Customcard(
+              ProfileItem(
                 ontap: () {
                   Navigator.push(
                     context,
@@ -62,19 +62,19 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
                 icon: Icons.person,
               ),
               Divider(),
-              Customcard(text: 'Payment Methods', icon: Icons.credit_card),
+              ProfileItem(text: 'Payment Methods', icon: Icons.credit_card),
               Divider(),
-              Customcard(text: 'My Wallet', icon: Icons.wallet),
+              ProfileItem(text: 'My Wallet', icon: Icons.wallet),
               Divider(),
-              Customcard(text: 'Settings', icon: Icons.settings),
+              ProfileItem(text: 'Settings', icon: Icons.settings),
               Divider(),
-              Customcard(text: 'Help Center', icon: Icons.help),
+              ProfileItem(text: 'Help Center', icon: Icons.help),
               Divider(),
-              Customcard(text: 'Privacy Policy', icon: Icons.lock),
+              ProfileItem(text: 'Privacy Policy', icon: Icons.lock),
               Divider(),
-              Customcard(text: 'Invite Frienda', icon: Icons.person),
+              ProfileItem(text: 'Invite Frienda', icon: Icons.person),
               Divider(),
-              Customcard(text: 'Log out', icon: Icons.exit_to_app),
+              ProfileItem(text: 'Log out', icon: Icons.exit_to_app),
             ],
           ),
         ),

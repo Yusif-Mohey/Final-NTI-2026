@@ -4,8 +4,8 @@ import 'package:gap/gap.dart';
 
 import 'package:line_icons/line_icons.dart';
 
-class Customcard extends StatelessWidget {
-  const Customcard({super.key, required this.text, required this.icon, this.ontap});
+class ProfileItem extends StatelessWidget {
+  const ProfileItem({super.key, required this.text, required this.icon, this.ontap});
   final IconData icon;
   final String text;
   final VoidCallback? ontap;
