@@ -1,38 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
-import 'package:flutter_application_1/constants/app_colors.dart';
-import 'package:flutter_application_1/features/home/home_view.dart';
-import 'package:flutter_application_1/features/profile/profile_screen_list.dart';
-import 'package:flutter_application_1/features/profile/profile_view.dart';
-// import 'package:nti_final/constants/app_colors.dart';
-// import 'package:nti_final/features/home/home_view.dart';
-// import 'package:nti_final/features/profile/profile_view.dart';
 
-class Root extends StatefulWidget {
-  const Root({super.key});
+class CustomBottomBar extends StatefulWidget {
+   CustomBottomBar({super.key});
 
   @override
-  State<Root> createState() => _RootState();
+  State<CustomBottomBar> createState() => _CustomBottomBarState();
 }
 
-class _RootState extends State<Root> {
-  late List<Widget> screen;
-  int currentPage = 0;
-  @override
-  void initState() {
-    screen = [HomeView(), ProfileScreenList()];
-    ////  1
-    print('slam 3alekom');
-    super.initState();
-  }
+class _CustomBottomBarState extends State<CustomBottomBar> {
+int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: false,
-      child: Scaffold(
-        body: IndexedStack(index: currentPage, children: screen),
+    return Scaffold(
+       body: IndexedStack(index: currentPage, ),
         bottomNavigationBar: Container(
           padding: EdgeInsets.all(10.0),
           decoration: BoxDecoration(
@@ -64,7 +47,6 @@ class _RootState extends State<Root> {
             ],
           ),
         ),
-      ),
     );
   }
 }
