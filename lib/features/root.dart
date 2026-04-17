@@ -1,11 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Core/Theme/app_colors.dart';
-import 'package:flutter_application_1/features/home/home_view.dart';
-import 'package:flutter_application_1/features/profile/profile_view.dart';
-// import 'package:nti_final/constants/app_colors.dart';
-// import 'package:nti_final/features/home/home_view.dart';
-// import 'package:nti_final/features/profile/profile_view.dart';
+import 'package:flutter_application_1/Core/shared/custom_text.dart';
+import 'package:flutter_application_1/core/Theme/app_colors.dart';
+import 'package:flutter_application_1/features/home/view/home_view.dart';
+import 'package:flutter_application_1/features/profile/view/profile_view.dart';
 
 class Root extends StatefulWidget {
   const Root({super.key});
@@ -19,9 +19,14 @@ class _RootState extends State<Root> {
   int currentPage = 0;
   @override
   void initState() {
-    screen = [HomeView(), ProfileView()];
-    ////  1
-    print('slam 3alekom');
+    screen = [
+      HomeView(),
+      CustomText(text: 'Favorate Screen'),
+      CustomText(text: 'Services Screen'),
+
+      ProfileView(),
+    ];
+    log('slam 3alekom');
     super.initState();
   }
 
@@ -54,7 +59,14 @@ class _RootState extends State<Root> {
                 icon: Icon(CupertinoIcons.home),
                 label: 'Home',
               ),
-
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.heart_circle_fill),
+                label: 'Favorites',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.list_bullet_below_rectangle),
+                label: 'Services',
+              ),
               BottomNavigationBarItem(
                 icon: Icon(CupertinoIcons.person),
                 label: 'Profile',

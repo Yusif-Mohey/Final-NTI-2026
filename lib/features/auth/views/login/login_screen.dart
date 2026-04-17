@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app_data.dart';
-import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
+import 'package:flutter_application_1/core/services/firebase_services.dart';
+import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
 import 'package:gap/gap.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -15,7 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formkey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  Dispose() {
+  @override
+  dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -54,8 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         CustomTextFormField(
                           obscurePassword: false,
-                          validator: (Value) {
-                            if (Value!.isEmpty) {
+                          validator: (value) {
+                            if (value!.isEmpty) {
                               return "Email can't be empty";
                             }
                             return null;
@@ -84,11 +85,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Color(0xff753EFB)),
+                  backgroundColor: WidgetStateProperty.all(Color(0xff753EFB)),
                 ),
                 onPressed: () {
                   _formkey.currentState?.validate();
-                  AppData.Signin(
+                  FirebaseServices.signin(
                     _emailController.text.trim(),
                     _passwordController.text.trim(),
                   );

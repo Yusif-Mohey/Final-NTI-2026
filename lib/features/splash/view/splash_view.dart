@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Core/Theme/app_colors.dart';
+import 'package:flutter_application_1/core/constants/app_asssts.dart';
+import 'package:flutter_application_1/core/theme/app_colors.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 // import 'package:nti_final/constants/app_colors.dart';
@@ -17,8 +18,6 @@ class _SplashViewState extends State<SplashView>
   late Animation<double> _logoFade;
   late Animation<double> _logoScale;
   late Animation<Offset> _imageSlide;
-
-  // AuthRepo authRepo = AuthRepo();
 
   @override
   void initState() {
@@ -70,7 +69,7 @@ class _SplashViewState extends State<SplashView>
             opacity: _logoFade,
             child: ScaleTransition(
               scale: _logoScale,
-              child: SvgPicture.asset('assests/9tsVr01.svg'),
+              child: SvgPicture.asset(AppAssets.logoImg),
             ),
           ),
 
@@ -80,7 +79,7 @@ class _SplashViewState extends State<SplashView>
           SlideTransition(
             position: _imageSlide,
             child: SvgPicture.asset(
-              'assests/9tsVr01.svg',
+              AppAssets.splashImg,
               width: double.infinity,
               fit: BoxFit.cover,
             ),

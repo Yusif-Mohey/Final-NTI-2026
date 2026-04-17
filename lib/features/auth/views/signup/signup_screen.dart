@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/auth/login/login_screen.dart';
-import 'package:flutter_application_1/shared/custom_app_button.dart';
-import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
+import 'package:flutter_application_1/features/auth/views/login/login_screen.dart';
+import 'package:flutter_application_1/core/shared/custom_app_button.dart';
+import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
 
 class SignupScreen extends StatelessWidget {
-  static String id = 'Signuppage';
   const SignupScreen({super.key});
 
   @override
@@ -95,8 +94,6 @@ class SignupScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 15),
               ],
             ),
           ],
