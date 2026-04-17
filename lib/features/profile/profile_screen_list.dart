@@ -5,6 +5,7 @@ import 'package:flutter_application_1/features/root.dart';
 import 'package:flutter_application_1/shared/cutom_progileitem.dart.dart';
 
 import 'package:gap/gap.dart';
+import 'package:line_icons/line_icons.dart';
 
 
 class ProfileScreenList extends StatefulWidget {
@@ -34,13 +35,34 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
             children: [
               Align(
                 alignment: Alignment.center,
-                child: CircleAvatar(
-                  backgroundColor: AppColors.secondary,
-                  radius: 100,
-                  child: Image.network(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy_V5A5D8KjBKXSRg35mCHYSoFsTGydgtYLg&s',
+                child: Stack(
+                  clipBehavior: Clip.none,
+children: [
+                   CircleAvatar(
+                    backgroundColor: AppColors.secondary,
+                    radius: 100,
+                    child: Image.network(
+                      
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy_V5A5D8KjBKXSRg35mCHYSoFsTGydgtYLg&s',
+                    fit: BoxFit.cover,
+                    ),
                   ),
-                ),
+                  Gap(5),
+                  Positioned(
+                    bottom: -7,
+                    right: -7,
+                    child: 
+                    Container(
+                      padding: EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: AppColors.primary,
+                        border: Border.all(color: Colors.white ,width: 2),
+                        shape: BoxShape.circle
+                      ),
+                      child: IconButton(onPressed: (){}, icon:Icon( LineIcons.edit ,size: 20,))
+                    ),
+                    )
+             ] ),
               ),
               Gap(40),
               Text(
@@ -53,26 +75,38 @@ class _ProfileScreenListState extends State<ProfileScreenList> {
               ),
               Gap(20),
               ProfileItem(
-                ontap: () {
-                 
-                },
+                ontap: () {},
                 text: 'Your profile',
                 icon: Icons.person,
               ),
               Divider(),
-              ProfileItem(text: 'Payment Methods', icon: Icons.credit_card),
+              ProfileItem(
+                 ontap: () {},
+                text: 'Payment Methods', icon: Icons.credit_card),
               Divider(),
-              ProfileItem(text: 'My Wallet', icon: Icons.wallet),
+              ProfileItem(
+                 ontap: () {},
+                text: 'My Wallet', icon: Icons.wallet),
               Divider(),
-              ProfileItem(text: 'Settings', icon: Icons.settings),
+              ProfileItem(
+                 ontap: () {},
+                text: 'Settings', icon: Icons.settings),
               Divider(),
-              ProfileItem(text: 'Help Center', icon: Icons.help),
+              ProfileItem(
+                 ontap: () {},
+                text: 'Help Center', icon: Icons.help),
               Divider(),
-              ProfileItem(text: 'Privacy Policy', icon: Icons.lock),
+              ProfileItem(
+                 ontap: () {},
+                text: 'Privacy Policy', icon: Icons.lock),
               Divider(),
-              ProfileItem(text: 'Invite Frienda', icon: Icons.person),
+              ProfileItem(
+                 ontap: () {},
+                text: 'Invite Frienda', icon: Icons.person),
               Divider(),
-              ProfileItem(text: 'Log out', icon: Icons.exit_to_app),
+              ProfileItem(
+                 ontap: () {},
+                text: 'Log out', icon: Icons.exit_to_app),
             ],
           ),
         ),

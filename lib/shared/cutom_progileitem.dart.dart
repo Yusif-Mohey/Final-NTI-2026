@@ -31,7 +31,7 @@ class ProfileItem extends StatelessWidget {
                 // fontWeight: FontWeight.bold,
               ),
             ),
-          //  Spacer(),
+           Spacer(),
               Icon(
                                   LineIcons.angleRight,
                                   // size: 30,
