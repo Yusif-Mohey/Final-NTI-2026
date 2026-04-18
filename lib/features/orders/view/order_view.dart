@@ -3,8 +3,8 @@ import 'package:flutter_application_1/core/constants/app_assets.dart';
 import 'package:flutter_application_1/core/shared/card_item.dart';
 import 'package:gap/gap.dart';
 
-class FavoriteView extends StatelessWidget {
-  const FavoriteView({super.key});
+class OrderView extends StatelessWidget {
+  const OrderView({super.key});
 
   @override
   Widget build(BuildContext context) {

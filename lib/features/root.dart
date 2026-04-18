@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/shared/custom_text.dart';
 import 'package:flutter_application_1/core/Theme/app_colors.dart';
-import 'package:flutter_application_1/features/favorite/view/favorite_view.dart';
+import 'package:flutter_application_1/features/orders/view/order_view.dart';
 import 'package:flutter_application_1/features/home/view/home_view.dart';
 import 'package:flutter_application_1/features/profile/view/profile_view.dart';
 
@@ -22,7 +22,7 @@ class _RootState extends State<Root> {
   void initState() {
     screen = [
       HomeView(),
-      FavoriteView(),
+      OrderView(),
       CustomText(text: 'Services Screen'), // Scrvices
       ProfileView(),
     ];

@@ -66,114 +66,88 @@ class _CardItemState extends State<CardItem> {
                 height: 100.h,
                 child: GridTile(
                   // header: Padding(padding: EdgeInsets.only(top: 50, left: 200)),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 25,
-                      left: 30.0,
-                      right: 150,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: .start,
-                      crossAxisAlignment: .start,
-                      children: [
-                        Stack(
-                          children: [
-                            Container(
-                              height: 30.h,
-                              width: 45.w,
-                              decoration: BoxDecoration(
-                                color: AppColors.background,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                            Padding(
-                              padding: .symmetric(vertical: 3, horizontal: 3),
-                              child: Row(
-                                mainAxisAlignment: .end,
-                                crossAxisAlignment: .end,
-                                children: [
-                                  Icon(Icons.star, color: AppColors.icon),
-                                  Gap(5),
-                                  CustomText(text: "4.5"),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              isSelected = !isSelected;
-                            });
-                          },
-                          child: Container(
-                            height: 35.h,
-                            width: 25.w,
+                  child: Row(
+                    mainAxisAlignment: .start,
+                    crossAxisAlignment: .start,
+                    children: [
+                      Stack(
+                        children: [
+                          Container(
+                            height: 30.h,
+                            width: 45.w,
                             decoration: BoxDecoration(
-                              color: AppColors.surface,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Icon(
-                              isSelected
-                                  ? Icons.favorite
-                                  : Icons.favorite_outline,
-                              color: Colors.red,
+                              color: AppColors.background,
+                              borderRadius: BorderRadius.circular(5),
                             ),
                           ),
+                          Padding(
+                            padding: .symmetric(vertical: 3, horizontal: 3),
+                            child: Row(
+                              mainAxisAlignment: .end,
+                              crossAxisAlignment: .end,
+                              children: [
+                                Icon(Icons.star, color: AppColors.icon),
+                                Gap(5),
+                                CustomText(text: "4.5"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      Spacer(),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            isSelected = !isSelected;
+                          });
+                        },
+                        child: Container(
+                          height: 35.h,
+                          width: 25.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.surface,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: Icon(
+                            isSelected
+                                ? Icons.favorite
+                                : Icons.favorite_outline,
+                            color: Colors.red,
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 240, left: 25),
-                child: Container(
-                  height: 20.h,
-                  width: 60.w,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 242, 240, 240),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: CustomText(
-                    text: " Car parking",
-                    fontSize: 14,
+              Container(
+                height: 20.h,
+                width: 60.w,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 242, 240, 240),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: CustomText(
+                  text: " Car parking",
+                  fontSize: 14,
+                  color: AppColors.primary,
+                ),
+              ),
+              CustomText(text: widget.itemTitle),
+              CustomText(text: widget.price),
+              Divider(color: AppColors.background, indent: 20, endIndent: 140),
+              Row(
+                children: [
+                  Icon(Icons.timer, color: AppColors.primary, size: 35),
+                  CustomText(text: widget.textTime),
+                  Gap(120),
+                  Icon(
+                    Icons.car_repair_rounded,
                     color: AppColors.primary,
+                    size: 40,
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 270, left: 25),
-                child: CustomText(text: widget.itemTitle),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 250, left: 300),
-                child: CustomText(text: widget.price),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 300),
-                child: Divider(
-                  color: AppColors.background,
-                  indent: 20,
-                  endIndent: 140,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 310, left: 30),
-                child: Row(
-                  children: [
-                    Icon(Icons.timer, color: AppColors.primary, size: 35),
-                    CustomText(text: widget.textTime),
-                    Gap(120),
-                    Icon(
-                      Icons.car_repair_rounded,
-                      color: AppColors.primary,
-                      size: 40,
-                    ),
-                    CustomText(text: widget.textSpot),
-                  ],
-                ),
+                  CustomText(text: widget.textSpot),
+                ],
               ),
             ],
           ),
