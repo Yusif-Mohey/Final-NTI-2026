@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 
-import 'package:flutter_application_1/constants/app_colors.dart';
+
 import 'package:flutter_application_1/features/auth/newpassord/new_passord.dart';
 import 'package:flutter_application_1/features/home/home_view.dart';
+import 'package:flutter_application_1/features/services/Authfirebase.dart';
+
 import 'package:flutter_application_1/shared/custom_text_form_filed.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
@@ -30,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AuthBloc(),
+      create: (context) => AuthBloc(Authsigninservice()),
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           print('errroee');
