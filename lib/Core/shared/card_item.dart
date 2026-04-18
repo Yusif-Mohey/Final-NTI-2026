@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/shared/custom_text.dart';
 import 'package:flutter_application_1/core/Theme/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
 class CardItem extends StatefulWidget {
@@ -42,7 +43,6 @@ class _CardItemState extends State<CardItem> {
                     ),
                     margin: EdgeInsets.symmetric(horizontal: 8),
                     padding: EdgeInsets.symmetric(horizontal: 2, vertical: 16),
-
                     height: 350.h,
                     width: 250.w,
                     child: Align(
@@ -50,7 +50,7 @@ class _CardItemState extends State<CardItem> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                         clipBehavior: Clip.antiAlias,
-                        child: Image.asset(
+                        child: SvgPicture.asset(
                           widget.img,
                           fit: BoxFit.cover,
                           height: 210.h,

@@ -19,10 +19,8 @@ class MyApp extends StatelessWidget {
       designSize: ScreenUtil.defaultSize,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          body: Root(),
-        ),
+        home: const Root(),
+        // home: const SplashView(),
       ),
     );
   }

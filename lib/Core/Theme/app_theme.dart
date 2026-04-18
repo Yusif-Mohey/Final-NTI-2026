@@ -23,6 +23,7 @@ class AppTheme {
         elevation: 0,
         centerTitle: true,
       ),
+
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
@@ -48,7 +49,7 @@ class AppTheme {
       useMaterial3: true,
       colorScheme: const ColorScheme.dark(
         primary: AppColors.primary,
-        // secondary: AppColors.secondaryDark,
+        secondary: AppColors.secondary,
         surface: Color(0xFF1E1E1E),
         error: AppColors.error,
         onPrimary: Colors.white,
@@ -58,6 +59,7 @@ class AppTheme {
       ),
       scaffoldBackgroundColor: AppColors.primary,
       fontFamily: 'Inter',
+
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.secondary,
         foregroundColor: Colors.white,

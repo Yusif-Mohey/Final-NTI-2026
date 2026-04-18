@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/constants/app_asssts.dart';
+import 'package:flutter_application_1/core/constants/app_assets.dart';
 import 'package:flutter_application_1/core/theme/app_colors.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gap/gap.dart';
-// import 'package:nti_final/constants/app_colors.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -39,14 +37,16 @@ class _SplashViewState extends State<SplashView>
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutBack));
 
     _imageSlide = Tween<Offset>(
-      begin: const Offset(0, 0.4),
+      begin: const Offset(0, 0.1),
       end: Offset.zero,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
-    _controller.forward();
+    // _controller.forward();
 
     Future.delayed(const Duration(milliseconds: 2500), () {
-      // add the check Login method;
+      /// add the check Login method;
+
+      print('Sh3`alaaaaaaaaaaaa');
     });
   }
 
@@ -61,18 +61,20 @@ class _SplashViewState extends State<SplashView>
     return Scaffold(
       backgroundColor: AppColors.primary,
       body: Column(
+        mainAxisAlignment: .center,
+        crossAxisAlignment: .center,
         children: [
-          const Gap(280),
-
           /// Logo Animation
           FadeTransition(
             opacity: _logoFade,
             child: ScaleTransition(
               scale: _logoScale,
-              child: SvgPicture.asset(AppAssets.logoImg),
+              child: SvgPicture.asset(
+                AppAssets.logoImg,
+                height: MediaQuery.of(context).size.height * 0.5,
+              ),
             ),
           ),
-
           const Spacer(),
 
           /// Bottom Image Animation
@@ -80,7 +82,7 @@ class _SplashViewState extends State<SplashView>
             position: _imageSlide,
             child: SvgPicture.asset(
               AppAssets.splashImg,
-              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.5,
               fit: BoxFit.cover,
             ),
           ),
