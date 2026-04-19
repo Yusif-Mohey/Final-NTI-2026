@@ -151,14 +151,14 @@ body: SingleChildScrollView(
                     CustomText(
                       text: '01:24:08',
                       color: AppColors.surface,
-                      fontSize: 30,
+                      fontSize: 35,
                       fontWeight: FontWeight.bold,
                     ),
                   ]),
           ]),      
 Gap(3),
-            CustomText(text: 'Curent Session' ,color: AppColors.surface, fontSize: 20,fontWeight: FontWeight.bold,),
-             CustomText(text: 'Level4,B12' ,color: AppColors.surface, fontSize: 20,fontWeight: FontWeight.bold,),
+            CustomText(text: 'Curent Session' ,color: AppColors.surface, fontSize: 30,fontWeight: FontWeight.bold,),
+             CustomText(text: 'Level4,B12' ,color: AppColors.surface, fontSize: 30,fontWeight: FontWeight.bold,),
             
               Gap(40),
             Row(
@@ -166,14 +166,14 @@ Gap(3),
                 Expanded(
                   child: CustomAppButton(
                     borderRadius: 30,
-                    width: double.infinity,
+                    width: 200,
                     btnColor: AppColors.background,
                     onTap: () {},
                     child: Text(
                       'Extend Duration',
                       style: TextStyle(
                         color: AppColors.primary,
-                        fontSize: 20,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -187,7 +187,7 @@ Gap(3),
                   onPressed: () {},
                   icon: Icon(
                     Icons.location_on,
-                    size: 40,
+                    size: 50,
                     color: AppColors.surface,
                   ),
                 ),
