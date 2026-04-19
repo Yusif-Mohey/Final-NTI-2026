@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 
-import 'package:flutter_application_1/features/root.dart';
 import 'package:flutter_application_1/shared/cutom_progileitem.dart.dart';
 
 import 'package:gap/gap.dart';

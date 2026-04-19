@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Core/Theme/app_colors.dart';
-import 'package:flutter_application_1/constants/app_colors.dart';
 import 'package:flutter_application_1/shared/custom_text.dart';
 import 'package:gap/gap.dart';
 // import 'package:nti_final/constants/app_colors.dart';
@@ -33,7 +32,7 @@ class CustomAppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: double.infinity,
+        width: width ,
         height: height ?? 60,
         decoration: BoxDecoration(
           border: borderColor != null ? Border.all(color: borderColor!) : null,

@@ -1,11 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/features/auth/login/login_screen.dart';
-import 'package:flutter_application_1/features/auth/signup/signup_screen.dart';
+import 'package:flutter_application_1/features/home/ServicescardScreen.dart';
+
+import 'package:flutter_application_1/features/home/deshboard_screen.dart';
 
 
 
-import 'package:flutter_application_1/features/root.dart';
+
 
 
 
@@ -29,7 +30,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body:
-        LoginScreen()
+      
+        DeshboardScreen()
+        // LoginScreen()
       //  Root()
       
 
