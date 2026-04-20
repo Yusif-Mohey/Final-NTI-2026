@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       designSize: ScreenUtil.defaultSize,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Scaffold(body: const SignupScreen()),
-        // home: const Root(),
+        // home: Scaffold(body: const SignupScreen()),
+        home: const Root(),
       ),
     );
   }
