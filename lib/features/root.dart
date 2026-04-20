@@ -1,12 +1,15 @@
 import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// <<<<<<< HEAD
 import 'package:flutter_application_1/Core/shared/custom_text.dart';
+// =======
+// >>>>>>> b45edb7 (add session screen, bokking , dashboard)
 import 'package:flutter_application_1/core/Theme/app_colors.dart';
-import 'package:flutter_application_1/features/orders/view/order_view.dart';
-import 'package:flutter_application_1/features/home/view/home_view.dart';
-import 'package:flutter_application_1/features/profile/view/profile_view.dart';
+import 'package:flutter_application_1/features/booking/presentation/view/booking_view.dart';
+import 'package:flutter_application_1/features/home/presentation/view/home_view.dart';
+import 'package:flutter_application_1/features/profile/presentation/view/profile_view.dart';
+import 'package:flutter_application_1/features/session/presentation/view/timer_view.dart';
 
 class Root extends StatefulWidget {
   const Root({super.key});
@@ -20,12 +23,7 @@ class _RootState extends State<Root> {
   int currentPage = 0;
   @override
   void initState() {
-    screen = [
-      HomeView(),
-      OrderView(),
-      CustomText(text: 'Services Screen'), // Scrvices
-      ProfileView(),
-    ];
+    screen = [HomeView(), BookingView(), TimerView(), ProfileView()];
     log('slam 3alekom');
     super.initState();
   }
@@ -37,9 +35,7 @@ class _RootState extends State<Root> {
       child: SafeArea(
         child: Scaffold(
           body: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 8,
-            ), // for all the application except details cards or details services
+            padding: const EdgeInsets.symmetric(horizontal: 8),
             child: IndexedStack(index: currentPage, children: screen),
           ),
           bottomNavigationBar: Container(
@@ -65,22 +61,22 @@ class _RootState extends State<Root> {
                 enableFeedback: false,
                 showUnselectedLabels: false,
                 showSelectedLabels: false,
-                selectedIconTheme: IconThemeData(color: Colors.white),
-                unselectedIconTheme: IconThemeData(color: Colors.grey.shade500),
+                selectedIconTheme: IconThemeData(color: AppColors.surface),
+                unselectedIconTheme: IconThemeData(color: AppColors.secondary),
                 backgroundColor: Colors.transparent,
                 type: BottomNavigationBarType.fixed,
 
                 items: [
                   BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.home),
+                    icon: Icon(CupertinoIcons.house),
                     label: 'Home',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.heart_circle_fill),
-                    label: 'Favorites',
+                    icon: Icon(CupertinoIcons.car),
+                    label: 'Parking',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.coffee_rounded),
+                    icon: Icon(Icons.av_timer_sharp),
                     label: 'Services',
                   ),
                   BottomNavigationBarItem(

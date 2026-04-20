@@ -26,4 +26,6 @@ class FirebaseServices {
       log("error in register with firebase");
     }
   }
+
+  /// Google fun
 }

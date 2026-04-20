@@ -34,6 +34,7 @@ dependencies:
   firebase_core: ^4.6.0
   firedart: ^0.9.8
   flineicons: ^0.1.1
+  intl: 
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.9.3
@@ -42,6 +43,7 @@ dependencies:
   google_fonts: ^8.0.2
   google_sign_in: ^7.2.0
   line_icons: ^2.0.3
+  circular_countdown_timer: ^0.2.4
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
