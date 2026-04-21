@@ -27,5 +27,12 @@ class FirebaseServices {
     }
   }
 
-  /// Google fun
+  static Future<void> signout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      log('signout success');
+    } catch (e) {
+      log('no signout');
+    }
+  }
 }
