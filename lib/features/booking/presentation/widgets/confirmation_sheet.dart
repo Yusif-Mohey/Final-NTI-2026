@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../models/parking_spot.dart';
 import '../../../../Core/Theme/app_colors.dart';
 
-class BookingConfirmationSheet extends StatelessWidget {
+class BookingConfirmationSheet extends StatefulWidget {
   final ParkingSpot spot;
   final DateTime date;
   final TimeOfDay startTime;
@@ -24,6 +25,16 @@ class BookingConfirmationSheet extends StatelessWidget {
     required this.totalHours,
     required this.onConfirm,
   });
+
+  @override
+  State<BookingConfirmationSheet> createState() =>
+      _BookingConfirmationSheetState();
+}
+
+class _BookingConfirmationSheetState extends State<BookingConfirmationSheet> {
+  final TextEditingController _controller = TextEditingController();
+
+  QrImageView? _qrImageView;
 
   @override
   Widget build(BuildContext context) {
@@ -54,18 +65,24 @@ class BookingConfirmationSheet extends StatelessWidget {
             ),
           ),
           const Gap(20),
-          _SheetRow('📍 Spot', spot.id),
-          _SheetRow('📅 Date', DateFormat('EEE, MMM d yyyy').format(date)),
-          _SheetRow('🕐 From', startTime.format(context)),
-          _SheetRow('🕓 To', endTime.format(context)),
-          _SheetRow('⏱ Duration', '${totalHours.toStringAsFixed(1)} hours'),
+          _SheetRow('📍 Spot', widget.spot.id),
+          _SheetRow(
+            '📅 Date',
+            DateFormat('EEE, MMM d yyyy').format(widget.date),
+          ),
+          _SheetRow('🕐 From', widget.startTime.format(context)),
+          _SheetRow('🕓 To', widget.endTime.format(context)),
+          _SheetRow(
+            '⏱ Duration',
+            '${widget.totalHours.toStringAsFixed(1)} hours',
+          ),
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 12),
             child: Divider(color: AppColors.surface),
           ),
           _SheetRow(
             '💳 Total',
-            '\$${totalCost.toStringAsFixed(2)}',
+            '\$${widget.totalCost.toStringAsFixed(2)}',
             isTotal: true,
           ),
           const Gap(24),
@@ -73,7 +90,7 @@ class BookingConfirmationSheet extends StatelessWidget {
             width: double.infinity,
             height: 52,
             child: ElevatedButton(
-              onPressed: onConfirm,
+              onPressed: widget.onConfirm,
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primary,
                 foregroundColor: Colors.white,
@@ -82,9 +99,24 @@ class BookingConfirmationSheet extends StatelessWidget {
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-              child: const Text(
-                'Confirm & Pay',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+
+              child: TextButton(
+                onPressed: () {
+                  if (_controller.text.isEmpty) {
+                    return;
+                  }
+                  setState(() {
+                    _qrImageView = QrImageView(
+                      data: '${widget.spot.id}-firebase', // mohey
+                      version: QrVersions.auto,
+                      size: 300.0,
+                    );
+                  });
+                },
+                child: const Text(
+                  'Confirm & Pay',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                ),
               ),
             ),
           ),
