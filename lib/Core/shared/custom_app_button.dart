@@ -53,7 +53,7 @@ class CustomAppButton extends StatelessWidget {
                     CustomText(
                       text: text ?? '',
                       color: textColor ?? Colors.white,
-                      fontSize: 20.sp,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.bold,
                     ),
                     Gap(20),

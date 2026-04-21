@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
+import 'package:flutter_application_1/features/home/presentation/widgets/services_card_screen.dart';
 import 'package:flutter_application_1/features/root.dart';
 import 'package:flutter_application_1/features/splash/view/splash_view.dart';
 import 'package:flutter_application_1/firebase_options.dart';
@@ -22,7 +24,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: Scaffold(body: const SignupScreen()),
-        home: const Root(),
+        home:LoginScreen()
+        // ServicesCardScreen()
+        //  const Root(),
       ),
     );
   }

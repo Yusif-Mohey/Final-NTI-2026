@@ -4,6 +4,7 @@ import 'package:flutter_application_1/core/shared/base_card.dart';
 import 'package:flutter_application_1/core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/core/shared/custom_text.dart';
 import 'package:flutter_application_1/features/home/presentation/widgets/services_card_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class HomeView extends StatelessWidget {
@@ -22,7 +23,7 @@ class HomeView extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 hintText: 'Garage Services & Facilities',
-                hintStyle: TextStyle(color: AppColors.secondary, fontSize: 20),
+                hintStyle: TextStyle(color: AppColors.secondary, fontSize: 11.sp),
 
                 fillColor: Colors.grey.shade100,
                 filled: true,
@@ -55,7 +56,7 @@ class HomeView extends StatelessWidget {
                     CustomText(
                       text: 'My Spot',
                       color: AppColors.textPrimary,
-                      fontSize: 20,
+                      fontSize: 8.sp,
                     ),
                   ],
                 ),
@@ -80,7 +81,7 @@ class HomeView extends StatelessWidget {
                     CustomText(
                       text: 'Reservations',
                       color: AppColors.textPrimary,
-                      fontSize: 20,
+                      fontSize: 8.sp,
                     ),
                   ],
                 ),
@@ -105,7 +106,7 @@ class HomeView extends StatelessWidget {
                     CustomText(
                       text: 'Payments',
                       color: AppColors.textPrimary,
-                      fontSize: 20,
+                      fontSize: 8.sp,
                     ),
                   ],
                 ),
@@ -130,7 +131,7 @@ class HomeView extends StatelessWidget {
                     CustomText(
                       text: 'Concierge',
                       color: AppColors.textPrimary,
-                      fontSize: 20,
+                      fontSize: 8.sp,
                     ),
                   ],
                 ),
@@ -139,7 +140,7 @@ class HomeView extends StatelessWidget {
             Gap(20),
             BaseCard(
               pagging: EdgeInsets.all(30),
-              hight: 350,
+              hight: 450.h,
               width: double.infinity,
 
               gradient: [Color(0xff7B61FF), Color(0xFF9F7AEA)],
@@ -155,7 +156,7 @@ class HomeView extends StatelessWidget {
                           'Grand plaza Premium',
                           style: TextStyle(
                             color: AppColors.surface,
-                            fontSize: 20,
+                            fontSize: 10.sp,
                           ),
                         ),
                       ),
@@ -166,13 +167,13 @@ class HomeView extends StatelessWidget {
                           CustomText(
                             text: 'Remaining',
                             color: AppColors.surface,
-                            fontSize: 25,
+                            fontSize: 10.sp,
                           ),
                           Gap(3),
                           CustomText(
                             text: '01:24:08',
                             color: AppColors.surface,
-                            fontSize: 35,
+                            fontSize: 10.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ],
@@ -183,37 +184,38 @@ class HomeView extends StatelessWidget {
                   CustomText(
                     text: 'Curent Session',
                     color: AppColors.surface,
-                    fontSize: 30,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                   ),
                   CustomText(
                     text: 'Level4,B12',
                     color: AppColors.surface,
-                    fontSize: 30,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                   ),
 
-                  Gap(40),
+                  Gap(30),
                   Row(
                     children: [
                       Expanded(
                         child: CustomAppButton(
+                          height: 60.h,
                           borderRadius: 30,
-                          width: 200,
+                          width: 100.w,
                           btnColor: AppColors.background,
                           onTap: () {},
                           child: Text(
                             'Extend Duration',
                             style: TextStyle(
                               color: AppColors.primary,
-                              fontSize: 25,
+                              fontSize: 10.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
                       ),
 
-                      Gap(70),
+                      Gap(50),
                       IconButton(
                         autofocus: true,
 
@@ -236,14 +238,14 @@ class HomeView extends StatelessWidget {
                 CustomText(
                   text: 'Your Preferences ',
                   color: AppColors.textPrimary,
-                  fontSize: 30,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                 ),
                 Spacer(),
                 CustomText(
                   text: 'Settings ',
                   color: AppColors.primary,
-                  fontSize: 20,
+                  fontSize: 11.sp,
                 ),
               ],
             ),
@@ -253,8 +255,8 @@ class HomeView extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: BaseCard(
-                    hight: 200,
-                    width: 250,
+                    hight: 230.h,
+                    width: 150.w,
                     pagging: EdgeInsets.all(30),
 
                     child: Column(
@@ -268,14 +270,14 @@ class HomeView extends StatelessWidget {
                         CustomText(
                           text: 'Primary Vehicle',
                           color: AppColors.textPrimary,
-                          fontSize: 25,
+                          fontSize: 6.sp,
                           fontWeight: FontWeight.bold,
                         ),
                         Gap(5),
                         CustomText(
                           text: 'Tesla Model . 4B22',
                           color: AppColors.textSecondary,
-                          fontSize: 20,
+                          fontSize: 5.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ],
@@ -284,8 +286,8 @@ class HomeView extends StatelessWidget {
                 ),
                 Spacer(),
                 BaseCard(
-                  hight: 200,
-                  width: 250,
+                   hight: 230.h,
+                    width: 150.w,
                   pagging: EdgeInsets.all(30),
 
                   child: Column(
@@ -295,14 +297,14 @@ class HomeView extends StatelessWidget {
                       CustomText(
                         text: 'Member Status',
                         color: AppColors.textPrimary,
-                        fontSize: 25,
+                        fontSize: 6.sp,
                         fontWeight: FontWeight.bold,
                       ),
                       Gap(5),
                       CustomText(
                         text: 'Platinum Tier',
                         color: AppColors.textSecondary,
-                        fontSize: 20,
+                        fontSize: 5.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ],
@@ -316,7 +318,7 @@ class HomeView extends StatelessWidget {
               child: CustomText(
                 text: 'Garage Services ',
                 color: AppColors.textPrimary,
-                fontSize: 30,
+                fontSize: 12.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -326,7 +328,7 @@ class HomeView extends StatelessWidget {
             Gap(50),
             BaseCard(
               pagging: EdgeInsets.all(30),
-              hight: 300,
+              hight: 400.h,
               width: double.infinity,
               gradient: [Colors.grey.shade500, Colors.grey.shade300],
               child: Column(
@@ -334,27 +336,29 @@ class HomeView extends StatelessWidget {
                   CustomText(
                     text: 'Valet Upgrade',
                     color: AppColors.textPrimary,
-                    fontSize: 30,
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.bold,
                   ),
                   CustomText(
                     text: 'Upgrade your current stay',
                     color: Colors.black87,
-                    fontSize: 25,
+                   fontSize: 9.sp,
                   ),
                   CustomText(
                     text: 'to Full Valet service for just \$15 .',
                     color: Colors.black87,
-                    fontSize: 25,
+                    fontSize: 9.sp,
                   ),
-                  Gap(50),
+                  Gap(30),
                   CustomAppButton(
                     onTap: () {},
                     btnColor: Colors.grey.shade700,
                     borderRadius: 50,
-                    width: 300,
-                    text: 'Upgrade now',
+                    width: 150.w,
+                    height: 100.h,
+                    text: 'Upgrade now' ,
                     textColor: AppColors.surface,
+                    
                   ),
                 ],
               ),
