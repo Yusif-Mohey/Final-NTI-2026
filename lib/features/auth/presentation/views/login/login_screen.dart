@@ -107,18 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         // ),
                         onTap: () {
                           _formkey.currentState?.validate();
-                          // String goHome = FirebaseAuthSer.signin(
-                          //   _emailController.text.trim(),
-                          //   _passwordController.text.trim(),
-                          // ).toString();
-                          // if (goHome == 'bad') {
-                          //   customSnack('Not Allowed');
-                          // } else {
-                          //   Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(builder: (context) => HomeView()),
-                          //   );
-                          // }
+                          
                         },
                         text: 'Sign',
                       ),
