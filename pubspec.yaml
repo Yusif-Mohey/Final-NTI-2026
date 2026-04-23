@@ -46,9 +46,10 @@ dependencies:
   circular_countdown_timer: ^0.2.4
   qr_flutter: ^4.1.0
   path_provider: ^2.1.5
-  barcode: ^2.2.9
-  simple_barcode_scanner: ^0.6.0
+ 
+
   qr_code_scanner_plus: ^2.1.1
+  shared_preferences: ^2.5.5
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
@@ -62,10 +63,15 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/image/
-    - assets/image/svg/
+      - assets/image/track.jpg
+      - assets/fave.jpg
+      - assets/find.jpg
+    # - assets/image/
+    # - assets/image/svg/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
