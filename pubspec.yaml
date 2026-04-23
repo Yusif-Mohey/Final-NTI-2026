@@ -50,6 +50,7 @@ dependencies:
 
   qr_code_scanner_plus: ^2.1.1
   shared_preferences: ^2.5.5
+  animated_splash_screen: ^1.3.0
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:
@@ -70,6 +71,7 @@ flutter:
       - assets/image/track.jpg
       - assets/fave.jpg
       - assets/find.jpg
+      - assets/logo.jpg
     # - assets/image/
     # - assets/image/svg/
   #   - images/a_dot_ham.jpeg
