@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/Theme/app_colors.dart';
 import 'package:flutter_application_1/core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
+import 'package:flutter_application_1/features/auth/presentation/widgets/new_password.dart';
 import 'package:flutter_application_1/features/auth/presentation/widgets/social_auth.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -84,27 +87,36 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
                 Gap(30),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(onPressed: (){
+                  Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const NewPassord(),
+                          ),
+                        );
+                }, child: Text('Fotget Password' ,style: TextStyle(color: AppColors.primary ,fontSize: 10.sp ,fontWeight: FontWeight.bold),))),
+                Gap(20),
 
-                CustomAppButton(
-                  // style: ButtonStyle(
-                  //   backgroundColor: WidgetStateProperty.all(Color(0xff753EFB)),
-                  // ),
-                  onTap: () {
-                    _formkey.currentState?.validate();
-                    // String goHome = FirebaseAuthSer.signin(
-                    //   _emailController.text.trim(),
-                    //   _passwordController.text.trim(),
-                    // ).toString();
-                    // if (goHome == 'bad') {
-                    //   customSnack('Not Allowed');
-                    // } else {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(builder: (context) => HomeView()),
-                    //   );
-                    // }
-                  },
-                  text: 'Sign',
+                Center(
+                  child: CustomAppButton(
+                   
+                    // style: ButtonStyle(
+                    //   backgroundColor: WidgetStateProperty.all(Color(0xff753EFB)),
+                    // ),
+                    onTap: () {
+                      _formkey.currentState?.validate();
+                      
+                      
+                      // String goHome =FirebaseServices.signin(
+                      //   _emailController.text.trim(),
+                      //   _passwordController.text.trim(),
+                      // ).toString();
+                     
+                    },
+                    text: 'Sign in',
+                  ),
                 ),
                 Gap(30),
                 Center(child: Text("Or sign in with ")),

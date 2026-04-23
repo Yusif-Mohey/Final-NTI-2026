@@ -89,13 +89,15 @@ class _LoginScreenState extends State<NewPassord> {
 
                 //   },
                 //   child:
-                CustomAppButton(
-                  text: "Create New Password",
-                  onTap: () {
-                    if (_formkey.currentState!.validate()) {
-                      log("Valid");
-                    }
-                  },
+                Center(
+                  child: CustomAppButton(
+                    text: "Create New Password",
+                    onTap: () {
+                      if (_formkey.currentState!.validate()) {
+                        log("Valid");
+                      }
+                    },
+                  ),
                 ),
 
                 // child: SizedBox(
