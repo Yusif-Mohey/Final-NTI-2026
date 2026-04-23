@@ -104,13 +104,7 @@ class SignupScreen extends StatelessWidget {
                         text: "Sign Up",
                         onTap: () {
                           context.read<AuthBloc>().add(
-                            SignUpEvent(
-
-
-                              email: email.text.trim(),
-                              password: password.text.trim(),
-                              name: name.text.trim(),
-                            ),
+                            signUpEvent(email: email.text.trim(), password: password.text.trim(), Name: name.text)
                           );
                         },
                       ),
