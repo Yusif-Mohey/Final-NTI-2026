@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formkey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _name = TextEditingController();
   @override
   dispose() {
     _emailController.dispose();
@@ -102,12 +103,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       Gap(30),
 
                       CustomAppButton(
-                        // style: ButtonStyle(
-                        //   backgroundColor: WidgetStateProperty.all(Color(0xff753EFB)),
-                        // ),
+                       
                         onTap: () {
                           _formkey.currentState?.validate();
-                          
+                      context.read<AuthBloc>().add(SignUpEvent(email: _emailController.text.trim(), password: _passwordController.text.trim(), name:_name.text.trim() ));    
                         },
                         text: 'Sign',
                       ),

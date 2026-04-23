@@ -16,5 +16,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(AutherorrState(error: 'Eroooooorrrrrrrrres'));
       }
     });
+    on<SignUpEvent>((event, emit) async {
+      emit(AuthLoadingState());
+      try {
+        FirebaseServices.register(event.email, event.password);
+        emit(AuthsaccesState());
+      } catch (e) {
+        emit(AutherorrState(error: 'Eroooooorrrrrrrrres'));
+      }
+    });
   }
 }
