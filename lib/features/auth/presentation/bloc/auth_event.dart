@@ -22,6 +22,5 @@ final class SignUpEvent extends AuthEvent {
 }
 
 class SignoutEvent extends AuthEvent {
-  final String email;
-  SignoutEvent({required this.email});
+  
 }

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/shared/custom_snack_bar.dart';
+import 'package:flutter_application_1/core/Theme/app_colors.dart';
+
 import 'package:flutter_application_1/core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
 import 'package:flutter_application_1/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
 import 'package:flutter_application_1/features/auth/presentation/widgets/social_auth.dart';
 import 'package:flutter_application_1/features/home/presentation/view/home_view.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
@@ -19,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formkey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  final _name = TextEditingController();
+
   @override
   dispose() {
     _emailController.dispose();
@@ -33,12 +37,23 @@ class _LoginScreenState extends State<LoginScreen> {
       create: (context) => AuthBloc(),
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          print('Erorr');
+          if (state is AuthsaccesloginState) {
+            customSnack("Login Success");
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeView()),
+            );
+          }
+
+          if (state is AutherorrloginState) {
+            customSnack(state.error,);
+          }
         },
         builder: (context, state) {
-          if (state is AuthsaccesState) {
-            return HomeView();
-          }
+           if (state is AuthLoadingloginState) {
+      return Center(child: CircularProgressIndicator());
+    }
           return Scaffold(
             body: Padding(
               padding: const EdgeInsets.all(30),
@@ -103,10 +118,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       Gap(30),
 
                       CustomAppButton(
-                       
                         onTap: () {
                           _formkey.currentState?.validate();
-                      context.read<AuthBloc>().add(SignUpEvent(email: _emailController.text.trim(), password: _passwordController.text.trim(), name:_name.text.trim() ));    
+                          context.read<AuthBloc>().add(
+                            LoginEvent(
+                              email: _emailController.text.trim(),
+                              password: _passwordController.text.trim(),
+                            ),
+                          );
                         },
                         text: 'Sign',
                       ),
@@ -136,9 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               child: Text(
                                 "Sign Up",
-                                style: TextStyle(
-                                  color: Colors.deepPurpleAccent,
-                                ),
+                                style: TextStyle(color: AppColors.primary),
                               ),
                             ),
                           ],

@@ -1,31 +1,28 @@
-import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 
 class FirebaseServices {
-  static Future<void> signin(String email, String password) async {
+ static Future<User?> signin(String email, String password) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      final result =
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      log('login Success');
+
+      return result.user;
     } catch (e) {
-      log("error in Sigin with firebase");
+      throw Exception(e.toString());
     }
   }
-
   static Future<void> register(String email, String password) async {
-    try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      log('Add success');
-    } catch (e) {
-      log("error in register with firebase");
-    }
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
   }
 
-  /// Google fun
+  static Future<void> signout() async {
+    await FirebaseAuth.instance.signOut();
+  }
 }

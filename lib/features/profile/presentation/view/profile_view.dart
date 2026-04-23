@@ -15,14 +15,14 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final email = TextEditingController();
+   
     return BlocProvider(
       create: (context) => AuthBloc(),
 
       child: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {},
         builder: (context, state) {
-          if (state is AuthsaccesState) {
+          if (state is SignOutSuccess) {
             return LoginScreen();
           }
           return SingleChildScrollView(
@@ -126,7 +126,7 @@ class ProfileView extends StatelessWidget {
                   ontap: () {
                     // mariam ---> add logout here
                     context.read<AuthBloc>().add(
-                      SignoutEvent(email: email.text.trim()),
+                      SignoutEvent(),
                     );
                   },
                   text: 'Log out',

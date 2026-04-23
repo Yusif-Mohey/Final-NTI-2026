@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/shared/custom_snack_bar.dart';
 import 'package:flutter_application_1/core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
 import 'package:flutter_application_1/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
 import 'package:flutter_application_1/features/auth/presentation/widgets/social_auth.dart';
-import 'package:flutter_application_1/features/home/presentation/view/home_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:gap/gap.dart';
@@ -24,11 +24,32 @@ class SignupScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => AuthBloc(),
       child: BlocConsumer<AuthBloc, AuthState>(
-        listener: (context, state) {},
-        builder: (context, state) {
-          if (state is AuthsaccesState) {
-            return HomeView();
+        listener: (context, state) {
+          if (state is SignUpSuccess) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text("Account created successfully"),
+                backgroundColor: Colors.green,
+              ),
+            );
+
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context) => LoginScreen()),);
           }
+
+          if (state is SignUpFailure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              customSnack(
+                 state.message,
+                
+              ),
+            );
+          }
+        },
+        builder: (context, state) {
+         if (state is SignUpLoading) {
+      return Center(child: CircularProgressIndicator());
+    }
           return Scaffold(
             body: SafeArea(
               child: SingleChildScrollView(
@@ -128,7 +149,13 @@ class SignupScreen extends StatelessWidget {
                           text: "Sign Up",
                           onTap: () {
                             _formkey.currentState?.validate();
-                            context.read<AuthBloc>().add(LoginEvent(email: email.text.trim(), password: password.text.trim()));
+                            context.read<AuthBloc>().add(
+                              SignUpEvent(
+                                email: email.text.trim(),
+                                password: password.text.trim(),
+                                name: name.text.trim(),
+                              ),
+                            );
                           },
                         ),
 
