@@ -1,7 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 // <<<<<<< HEAD
+// <<<<<<< HEAD
+// <<<<<<< HEAD
+// =======
+import 'package:flutter_application_1/Core/splash/splash_screen.dart';
+// >>>>>>> origin/splash
 import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
 // =======
 import 'package:flutter_application_1/Qr%20code/generat_qr_screen.dart';
@@ -10,9 +14,9 @@ import 'package:flutter_application_1/features/root.dart';
 // import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
 // import 'package:flutter_application_1/features/splash/view/splash_view.dart';
 // >>>>>>> origin/parking
-=======
+// =======
 import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
->>>>>>> origin/onboarding
+// >>>>>>> origin/onboarding
 import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/onboarding/onboard_sceen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,20 +45,28 @@ class MyApp extends StatelessWidget {
       designSize: ScreenUtil.defaultSize,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-<<<<<<< HEAD
+        // <<<<<<< HEAD
+        // <<<<<<< HEAD
 
         // home: Scaffold(body: const SignupScreen()),
-        home: Root(),
+        // home: Root(),
 
         // SplashView()
 
         // ServicesCardScreen()
         //  const Root(),
-=======
+        // =======
         home: Scaffold(
           body: seenOnboard ? const LoginScreen() : const OnboardScreen(),
         ),
->>>>>>> origin/onboarding
+        // >>>>>>> origin/onboarding
+        // =======
+        // home: SplashScreen(),
+        // Scaffold(
+        // body: seenOnboard ?  LoginScreen() :  OnboardScreen(),
+
+        // ),
+        // >>>>>>> origin/splash
       ),
     );
   }
