@@ -44,6 +44,11 @@ dependencies:
   google_sign_in: ^7.2.0
   line_icons: ^2.0.3
   circular_countdown_timer: ^0.2.4
+  qr_flutter: ^4.1.0
+  path_provider: ^2.1.5
+  barcode: ^2.2.9
+  simple_barcode_scanner: ^0.6.0
+  qr_code_scanner_plus: ^2.1.1
 dev_dependencies:
   flutter_lints: ^6.0.0
   flutter_test:

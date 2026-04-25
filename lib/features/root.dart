@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // <<<<<<< HEAD
-import 'package:flutter_application_1/Core/shared/custom_text.dart';
+// import 'package:flutter_application_1/Core/shared/custom_text.dart';
 // =======
 // >>>>>>> b45edb7 (add session screen, bokking , dashboard)
 import 'package:flutter_application_1/core/Theme/app_colors.dart';
