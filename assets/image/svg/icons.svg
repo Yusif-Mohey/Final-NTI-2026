@@ -1,0 +1,45 @@
+<svg width="200" height="200" viewBox="0 0 200 200"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- خلفية كاملة (أبيض) -->
+  <rect width="200" height="200" fill="#FFFFFF"/>
+
+  <!-- دبوس الموقع باللون الأزرق -->
+  <path d="M100 20
+           C70 20 50 45 50 75
+           C50 115 85 150 100 180
+           C115 150 150 115 150 75
+           C150 45 130 20 100 20Z"
+        fill="#243EA2"
+        stroke="#243EA2"
+        stroke-width="4"/>
+
+  <!-- الدائرة الداخلية باللون الأبيض -->
+  <circle cx="100" cy="80" r="40"
+          fill="#FFFFFF"
+          stroke="#243EA2"
+          stroke-width="3"/>
+
+  <!-- جسم السيارة باللون الأزرق -->
+  <rect x="70" y="70" width="60" height="28"
+        rx="6" ry="6"
+        fill="#243EA2"
+        stroke="#243EA2"
+        stroke-width="3"/>
+
+  <!-- الزجاج الأمامي -->
+  <rect x="78" y="62" width="44" height="16"
+        rx="4" ry="4"
+        fill="#FFFFFF"
+        stroke="#243EA2"
+        stroke-width="2"/>
+
+  <!-- الأضواء الخلفية -->
+  <rect x="70" y="76" width="6" height="10" fill="#e53935"/>
+  <rect x="124" y="76" width="6" height="10" fill="#e53935"/>
+
+  <!-- العجلات -->
+  <circle cx="80" cy="102" r="6" fill="#243EA2"/>
+  <circle cx="120" cy="102" r="6" fill="#243EA2"/>
+
+</svg>

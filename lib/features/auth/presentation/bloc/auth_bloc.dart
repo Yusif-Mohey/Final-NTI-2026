@@ -1,29 +1,59 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/services/firebase_services.dart';
-import 'package:flutter_application_1/features/auth/bloc/auth_bloc.dart';
 
-
+part 'auth_event.dart';
+part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc() : super(AuthInlichationState()) {
+  AuthBloc() : super(AuthintialisState()) {
     on<LoginEvent>((event, emit) async {
-      emit(AuthLoadingState());
+      emit(AuthLoadingloginState());
+
       try {
-        FirebaseServices.signin(event.email, event.password);
-        emit(AuthsaccesState());
+        final user = await FirebaseServices.signin(
+          event.email,
+          event.password,
+        );
+
+        if (user != null) {
+          emit(AuthsaccesloginState(masseg: 'Login success'));
+        } else {
+          emit(AutherorrloginState('Login failed'));
+        }
       } catch (e) {
-        emit(AuthFailurestatelogin(error: 'Eroooooorrrrrrrrres'));
+        emit(AutherorrloginState(e.toString()));
       }
     });
-    on<signUpEvent>((event, emit) async {
-      emit(AuthLoadingState());
+    on<SignUpEvent>((event, emit) async {
+      emit(SignUpLoading());
       try {
-        FirebaseServices.register(event.email, event.password);
-        emit(AuthsaccesState());
+        await FirebaseServices.register(event.email, event.password);
+
+        emit(SignUpSuccess());
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'email-already-in-use') {
+          emit(SignUpFailure('Email already exists'));
+        } else {
+          emit(SignUpFailure(e.message ?? 'Error'));
+        }
       } catch (e) {
-        emit(AuthFailurestatelogin(error: 'Eroooooorrrrrrrrres'));
+        emit(SignUpFailure('Something went wrong'));
+      }
+    });
+    on<SignoutEvent>((event, emit) async {
+      try {
+        await FirebaseServices.signout();
+        emit(SignOutSuccess());
+      } catch (e) {
+        emit(SignOutFailure(e.toString()));
       }
     });
   }
 }
+
+

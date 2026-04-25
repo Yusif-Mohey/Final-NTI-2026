@@ -9,7 +9,7 @@ SnackBar customSnack(String errorMsg, {bool state = true}) {
     // padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     // margin: const EdgeInsets.only(bottom: 30, right: 20, left: 20),
     elevation: 10,
-    behavior: SnackBarBehavior.floating,
+    behavior: SnackBarBehavior.fixed,
     backgroundColor: state ? Colors.green[600] : Colors.red.shade900,
     content: FittedBox(
       child: Row(
