@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../models/parking_spot.dart';
 import '../../../../Core/Theme/app_colors.dart';
@@ -34,7 +33,6 @@ class BookingConfirmationSheet extends StatefulWidget {
 class _BookingConfirmationSheetState extends State<BookingConfirmationSheet> {
   final TextEditingController _controller = TextEditingController();
 
-  QrImageView? _qrImageView;
 
   @override
   Widget build(BuildContext context) {
@@ -106,11 +104,6 @@ class _BookingConfirmationSheetState extends State<BookingConfirmationSheet> {
                     return;
                   }
                   setState(() {
-                    _qrImageView = QrImageView(
-                      data: '${widget.spot.id}-firebase', // mohey
-                      version: QrVersions.auto,
-                      size: 300.0,
-                    );
                   });
                 },
                 child: const Text(
