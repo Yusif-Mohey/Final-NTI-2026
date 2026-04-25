@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/Theme/app_colors.dart';
 import 'package:flutter_application_1/core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
+import 'package:flutter_application_1/features/auth/bloc/auth_bloc.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
 import 'package:flutter_application_1/features/auth/presentation/widgets/new_password.dart';
 import 'package:flutter_application_1/features/auth/presentation/widgets/social_auth.dart';
+// <<<<<<< HEAD
+// =======
+import 'package:flutter_application_1/features/home/presentation/view/home_view.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+
+// >>>>>>> origin/udate-bloc
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
@@ -86,34 +93,42 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
-                Gap(30),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(onPressed: (){
-                  Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const NewPassord(),
-                          ),
-                        );
-                }, child: Text('Fotget Password' ,style: TextStyle(color: AppColors.primary ,fontSize: 10.sp ,fontWeight: FontWeight.bold),))),
+                // Gap(30),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const NewPassord(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'Fotget Password',
+                      style: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
                 Gap(20),
 
                 Center(
                   child: CustomAppButton(
-                   
                     // style: ButtonStyle(
                     //   backgroundColor: WidgetStateProperty.all(Color(0xff753EFB)),
                     // ),
                     onTap: () {
                       _formkey.currentState?.validate();
-                      
-                      
+
                       // String goHome =FirebaseServices.signin(
                       //   _emailController.text.trim(),
                       //   _passwordController.text.trim(),
                       // ).toString();
-                     
                     },
                     text: 'Sign in',
                   ),
@@ -133,18 +148,50 @@ class _LoginScreenState extends State<LoginScreen> {
                         "Don't have an account?",
                         style: TextStyle(color: Colors.grey),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => SignupScreen(),
+                      // GestureDetector(
+                      //   onTap: () {
+                      //     // _formkey.currentState?.validate();
+                      //     // context.read<AuthBloc>().add(
+                      //     //   LoginEvent(
+                      //     //     email: _emailController.text,
+                      //     //     password: _passwordController.text,
+                      //     //   ),
+                      //     // );
+                      //   },
+                      //   text: 'Sign',
+                      // ),
+                      Gap(30),
+                      Center(child: Text("Or sign in with ")),
+                      Gap(10),
+                      SoicalAuth(),
+                      Gap(25),
+
+                      SizedBox(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don't have an account?",
+                              style: TextStyle(color: Colors.grey),
                             ),
-                          );
-                        },
-                        child: Text(
-                          "Sign Up",
-                          style: TextStyle(color: Colors.deepPurpleAccent),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignupScreen(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                "Sign Up",
+                                style: TextStyle(
+                                  color: Colors.deepPurpleAccent,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

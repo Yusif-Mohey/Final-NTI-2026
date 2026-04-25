@@ -1,15 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-// <<<<<<< HEAD
-// <<<<<<< HEAD
-// <<<<<<< HEAD
-// =======
-import 'package:flutter_application_1/Core/splash/splash_screen.dart';
-// >>>>>>> origin/splash
-import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
-// =======
-import 'package:flutter_application_1/Qr%20code/generat_qr_screen.dart';
-import 'package:flutter_application_1/Qr%20code/scan_qr_screen.dart';
+import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
 import 'package:flutter_application_1/features/root.dart';
 // import 'package:flutter_application_1/features/auth/presentation/views/signup/signup_screen.dart';
 // import 'package:flutter_application_1/features/splash/view/splash_view.dart';

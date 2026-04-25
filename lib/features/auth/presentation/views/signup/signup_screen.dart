@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/core/shared/custom_app_button.dart';
 import 'package:flutter_application_1/core/shared/custom_text_form_filed.dart';
+import 'package:flutter_application_1/features/auth/bloc/auth_bloc.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
 import 'package:flutter_application_1/features/auth/presentation/widgets/social_auth.dart';
+import 'package:flutter_application_1/features/home/presentation/view/home_view.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:gap/gap.dart';
 
@@ -86,7 +89,14 @@ class SignupScreen extends StatelessWidget {
 
                 Gap(30),
 
-                CustomAppButton(text: "Sign Up", onTap: () {}),
+                CustomAppButton(
+                  text: "Sign Up",
+                  onTap: () {
+                    // context.read<AuthBloc>().add(
+                    //   signUpEvent(email: email.text.trim(), password: password.text.trim(), Name: name.text)
+                    // );
+                  },
+                ),
 
                 Gap(15),
 
