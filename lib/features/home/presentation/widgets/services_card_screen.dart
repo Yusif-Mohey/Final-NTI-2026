@@ -10,69 +10,65 @@ class ServicesCardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    // SingleChildScrollView(
-    //   scrollDirection: Axis.horizontal,
-    //   child: 
-      Column(
-        children: [
-          BaseCard(
-            hight: 230.h,
-            width: 350.w,
-            pagging: EdgeInsets.all(30),
-      
+    return Column(
+      children: [
+        BaseCard(
+          hight: 120.h,
+          width: double.infinity,
+          child: Center(
             child: Column(
+              crossAxisAlignment: .center,
+              mainAxisAlignment: .center,
               children: [
                 Row(
                   children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
+                    Center(
                       child: Container(
-                        height: 100.h,
-                        width: 90.w,
+                        height: 80.h,
+                        width: 80.w,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(50),
                         ),
                         child: Icon(
-                          Icons.local_car_wash,
+                          Icons.ev_station,
                           size: 70,
                           color: AppColors.primary,
                         ),
                       ),
                     ),
-      
+
                     Gap(30),
                     Column(
                       children: [
                         Row(
                           children: [
                             CustomText(
-                              text: 'Premium Detail Wash ',
+                              text: 'Super EV Changing ',
                               color: AppColors.textPrimary,
-                              fontSize: 10.sp,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
                             ),
                             Gap(10),
                             CustomText(
-                              text: '\$45.00 ',
+                              text: '\$0.45/kWh',
                               color: AppColors.primary,
-                              fontSize: 10.sp,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ],
                         ),
-      
+
                         CustomText(
-                          text: 'Available on Level 1 * 45 min',
+                          text: 'All levels * Priority for members',
                           color: AppColors.textSecondary,
-                          fontSize: 6.sp,
+                          fontSize: 10.sp,
                         ),
                         Gap(3),
                         CustomText(
-                          text: 'in-session Service available ',
+                          text: '12 bays currently open ',
                           color: AppColors.error,
-                          fontSize: 6.sp,
+                          fontSize: 10.sp,
                         ),
                       ],
                     ),
@@ -81,156 +77,143 @@ class ServicesCardScreen extends StatelessWidget {
               ],
             ),
           ),
-          Gap(20),
-          //
-            BaseCard(
-               hight: 250.h,
-             width: 350.w,
-              pagging: EdgeInsets.all(30),
-      
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Row(
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            height: 100.h,
-                        width: 90.w,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Icon(
-                              Icons.ev_station,
-                              size: 70,
-                              color: AppColors.primary,
-                            ),
-                          ),
+        ),
+        Gap(20),
+        //
+        BaseCard(
+          hight: 120.h,
+          width: double.infinity,
+          child: Center(
+            child: Column(
+              crossAxisAlignment: .center,
+              mainAxisAlignment: .center,
+              children: [
+                Row(
+                  children: [
+                    Center(
+                      child: Container(
+                        height: 80.h,
+                        width: 80.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
                         ),
-      
-                        Gap(30),
-                        Column(
+                        child: Icon(
+                          Icons.ev_station,
+                          size: 70,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+
+                    Gap(30),
+                    Column(
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              children: [
-                                CustomText(
-                                  text: 'Super EV Changing ',
-                                  color: AppColors.textPrimary,
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                Gap(10),
-                                CustomText(
-                                  text: '\$0.45/kWh',
-                                  color: AppColors.primary,
-                                  fontSize: 8.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ],
-                            ),
-      
                             CustomText(
-                              text: 'All levels * Priority for members',
-                              color: AppColors.textSecondary,
-                              fontSize: 6.sp,
+                              text: 'Super EV Changing ',
+                              color: AppColors.textPrimary,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Gap(3),
+                            Gap(10),
                             CustomText(
-                              text: '12 bays currently open ',
-                              color: AppColors.error,
-                              fontSize: 6.sp,
+                              text: '\$0.45/kWh',
+                              color: AppColors.primary,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
                             ),
                           ],
                         ),
+
+                        CustomText(
+                          text: 'All levels * Priority for members',
+                          color: AppColors.textSecondary,
+                          fontSize: 10.sp,
+                        ),
+                        Gap(3),
+                        CustomText(
+                          text: '12 bays currently open ',
+                          color: AppColors.error,
+                          fontSize: 10.sp,
+                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              ],
             ),
-            Gap(20),
-            BaseCard(
-              hight: 250.h,
-            width: 350.w,
-              pagging: EdgeInsets.all(30),
-      
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Row(
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            height: 100.h,
-                        width: 90.w,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Icon(
-                              Icons.oil_barrel,
-                              size: 70,
-                              color: AppColors.primary,
-                            ),
-                          ),
+          ),
+        ),
+        Gap(20),
+        BaseCard(
+          hight: 120.h,
+          width: double.infinity,
+          child: Center(
+            child: Column(
+              crossAxisAlignment: .center,
+              mainAxisAlignment: .center,
+              children: [
+                Row(
+                  children: [
+                    Center(
+                      child: Container(
+                        height: 80.h,
+                        width: 80.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(50),
                         ),
-      
-                        Gap(30),
-                        Column(
+                        child: Icon(
+                          Icons.ev_station,
+                          size: 70,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+
+                    Gap(30),
+                    Column(
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              children: [
-                                CustomText(
-                                  text: 'Express Oil change  ',
-                                  color: AppColors.textPrimary,
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                Gap(10),
-                                CustomText(
-                                  text: '\$89.00 ',
-                                  color: AppColors.primary,
-                                 fontSize: 10.sp,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ],
-                            ),
-      
                             CustomText(
-                              text: 'Service Hub * Synthetic Grade',
-                              color: AppColors.textSecondary,
-                              fontSize: 6.sp,
+                              text: 'Super EV Changing ',
+                              color: AppColors.textPrimary,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
                             ),
-                            Gap(3),
+                            Gap(10),
                             CustomText(
-                              text: 'Next slot: 2:30 PM Today',
-                              color: AppColors.error,
-                             fontSize: 6.sp,
+                              text: '\$0.45/kWh',
+                              color: AppColors.primary,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.bold,
                             ),
                           ],
                         ),
+
+                        CustomText(
+                          text: 'All levels * Priority for members',
+                          color: AppColors.textSecondary,
+                          fontSize: 10.sp,
+                        ),
+                        Gap(3),
+                        CustomText(
+                          text: '12 bays currently open ',
+                          color: AppColors.error,
+                          fontSize: 10.sp,
+                        ),
                       ],
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              ],
             ),
-        ],
-      // ),
+          ),
+        ),
+      ],
     );
-  }
-}
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

@@ -6,28 +6,27 @@ class BaseCard extends StatelessWidget {
     required this.child,
     this.gradient,
     this.color,
-    required this.pagging,
-    required this.hight,
-    required this.width,
+    this.pagging,
+    this.hight,
+    this.width,
   });
   final Widget child;
   final List<Color>? gradient;
   final Color? color;
-  final EdgeInsets pagging;
-  final double hight;
-  final double width;
+  final EdgeInsets? pagging;
+  final double? hight;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: hight,
-      width: width,
+      height: hight ?? 100,
+      width: width ?? 250,
       margin: EdgeInsets.symmetric(vertical: 5),
-      padding: pagging,
+      padding: pagging ?? EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: BoxDecoration(
         color: gradient == null ? color ?? Colors.grey.shade300 : null,
         gradient: gradient != null ? LinearGradient(colors: gradient!) : null,
         borderRadius: BorderRadius.circular(20),
-
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(.05),

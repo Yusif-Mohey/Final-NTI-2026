@@ -32,59 +32,59 @@ class _RootState extends State<Root> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: false,
-      child: SafeArea(
-        child: Scaffold(
-          body: Padding(
+      child: Scaffold(
+        body: SafeArea(
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: IndexedStack(index: currentPage, children: screen),
           ),
-          bottomNavigationBar: Container(
-            padding: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: AppColors.primary,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+        ),
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.all(10.0),
+          decoration: BoxDecoration(
+            color: AppColors.primary,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+          ),
+          child: Theme(
+            data: Theme.of(context).copyWith(
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              hoverColor: Colors.transparent,
             ),
-            child: Theme(
-              data: Theme.of(context).copyWith(
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-              ),
-              child: BottomNavigationBar(
-                currentIndex: currentPage,
-                onTap: (index) {
-                  setState(() {
-                    currentPage = index;
-                  });
-                },
-                elevation: 0,
-                enableFeedback: false,
-                showUnselectedLabels: false,
-                showSelectedLabels: false,
-                selectedIconTheme: IconThemeData(color: AppColors.surface),
-                unselectedIconTheme: IconThemeData(color: AppColors.secondary),
-                backgroundColor: Colors.transparent,
-                type: BottomNavigationBarType.fixed,
+            child: BottomNavigationBar(
+              currentIndex: currentPage,
+              onTap: (index) {
+                setState(() {
+                  currentPage = index;
+                });
+              },
+              elevation: 0,
+              enableFeedback: false,
+              showUnselectedLabels: false,
+              showSelectedLabels: false,
+              selectedIconTheme: IconThemeData(color: AppColors.surface),
+              unselectedIconTheme: IconThemeData(color: AppColors.secondary),
+              backgroundColor: Colors.transparent,
+              type: BottomNavigationBarType.fixed,
 
-                items: [
-                  BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.house),
-                    label: 'Home',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.car),
-                    label: 'Parking',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.av_timer_sharp),
-                    label: 'Services',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(CupertinoIcons.person),
-                    label: 'Profile',
-                  ),
-                ],
-              ),
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.house),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.car),
+                  label: 'Parking',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.av_timer_sharp),
+                  label: 'Services',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(CupertinoIcons.person),
+                  label: 'Profile',
+                ),
+              ],
             ),
           ),
         ),

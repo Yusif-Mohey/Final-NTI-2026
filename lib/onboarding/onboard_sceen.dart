@@ -4,6 +4,7 @@ import 'package:flutter_application_1/features/auth/presentation/views/signup/si
 import 'package:flutter_application_1/onboarding/first_screen.dart';
 import 'package:flutter_application_1/onboarding/second_screen.dart';
 import 'package:flutter_application_1/onboarding/third_screen.dart';
+import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardScreen extends StatefulWidget {
@@ -45,7 +46,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   ],
                 ),
               ),
-
+              Gap(20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

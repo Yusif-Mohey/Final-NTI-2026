@@ -44,6 +44,9 @@ dependencies:
   google_sign_in: ^7.2.0
   line_icons: ^2.0.3
   circular_countdown_timer: ^0.2.4
+  qr_flutter: ^4.1.0
+  qr_code_scanner_plus: ^2.1.1
+  shared_preferences: ^2.5.5
   flutter_bloc: ^9.1.1
   bloc_provider: ^1.0.0
 dev_dependencies:
@@ -61,6 +64,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/image/
     - assets/image/svg/
   #   - images/a_dot_ham.jpeg
