@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/splash/splash_screen.dart';
 import 'package:flutter_application_1/features/auth/presentation/views/login/login_screen.dart';
+import 'package:flutter_application_1/features/root.dart';
 import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/onboarding/onboard_sceen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
       designSize: ScreenUtil.defaultSize,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: LoginScreen(),
+        home: SplashScreen(),
       ),
     );
   }

@@ -11,9 +11,9 @@ class BookingVehicleInfo extends StatelessWidget {
       children: const [
         Expanded(
           child: _InfoChip(
-            icon: Icons.directions_car_rounded,
-            label: 'VEHICLE',
-            value: 'Tesla Model 3',
+            icon: Icons.help_outline_sharp,
+            label: 'Help',
+            value: 'Contact Us',
           ),
         ),
         Gap(12),
@@ -61,7 +61,7 @@ class _InfoChip extends StatelessWidget {
             width: 36,
             height: 36,
             decoration: BoxDecoration(
-              color: AppColors.secondary,
+              color: Colors.transparent,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, color: AppColors.primary, size: 18),

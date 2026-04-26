@@ -31,9 +31,6 @@ class BookingConfirmationSheet extends StatefulWidget {
 }
 
 class _BookingConfirmationSheetState extends State<BookingConfirmationSheet> {
-  final TextEditingController _controller = TextEditingController();
-
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -97,19 +94,9 @@ class _BookingConfirmationSheetState extends State<BookingConfirmationSheet> {
                   borderRadius: BorderRadius.circular(14),
                 ),
               ),
-
-              child: TextButton(
-                onPressed: () {
-                  if (_controller.text.isEmpty) {
-                    return;
-                  }
-                  setState(() {
-                  });
-                },
-                child: const Text(
-                  'Confirm & Pay',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-                ),
+              child: const Text(
+                'Confirm & Pay',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
               ),
             ),
           ),

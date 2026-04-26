@@ -10,6 +10,7 @@ import '../widgets/booking_summary_card.dart';
 import '../widgets/booking_vehicle_info.dart';
 import '../widgets/confirmation_sheet.dart';
 import '../widgets/parking_grid.dart';
+import 'booking_qr_screen.dart';
 import '../../../../Core/Theme/app_colors.dart';
 
 class BookingView extends StatefulWidget {
@@ -126,6 +127,14 @@ class _BookingViewState extends State<BookingView> {
           backgroundColor: AppColors.primary,
         ),
       );
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text('Can Parking'),
+          content: Text('Please select a parking spot first.'),
+        ),
+      );
+
       return;
     }
 
@@ -136,15 +145,25 @@ class _BookingViewState extends State<BookingView> {
           backgroundColor: Colors.redAccent,
         ),
       );
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text('Cant Parking'),
+          content: Text('End Yuor time must be after start time.'),
+        ),
+      );
+
       return;
     }
+
+    final selectedBookingSpot = _selectedSpot!;
 
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => BookingConfirmationSheet(
-        spot: _selectedSpot!,
+        spot: selectedBookingSpot,
         date: _selectedDate,
         startTime: _selectedStartTime,
         endTime: _selectedEndTime,
@@ -154,7 +173,7 @@ class _BookingViewState extends State<BookingView> {
           Navigator.pop(context);
 
           setState(() {
-            _selectedSpot!.status = SpotStatus.occupied;
+            selectedBookingSpot.status = SpotStatus.occupied;
             _selectedSpot = null;
           });
 
@@ -162,6 +181,20 @@ class _BookingViewState extends State<BookingView> {
             const SnackBar(
               content: Text('🎉 Booking confirmed! Enjoy your visit.'),
               backgroundColor: AppColors.primary,
+            ),
+          );
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => BookingQrScreen(
+                spot: selectedBookingSpot,
+                date: _selectedDate,
+                startTime: _selectedStartTime,
+                endTime: _selectedEndTime,
+                totalCost: totalCost,
+                totalHours: totalHours,
+              ),
             ),
           );
         },

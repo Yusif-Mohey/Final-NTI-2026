@@ -103,10 +103,10 @@ class _BookingPickerRow extends StatelessWidget {
               width: 34,
               height: 34,
               decoration: BoxDecoration(
-                color: AppColors.secondary,
+                color: Colors.transparent,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: Icon(icon, color: AppColors.primary, size: 17),
+              child: Icon(icon, color: AppColors.primary, size: 24),
             ),
             const Gap(10),
             Column(

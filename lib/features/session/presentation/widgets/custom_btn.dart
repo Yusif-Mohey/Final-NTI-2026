@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/theme/app_colors.dart';
 
 class ButtonsSection extends StatelessWidget {
   final VoidCallback onStart;
@@ -20,8 +21,8 @@ class ButtonsSection extends StatelessWidget {
             width: double.infinity,
             height: 55,
             decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xff7B61FF), Color(0xff9C8CFF)],
+              gradient: LinearGradient(
+                colors: [AppColors.primary, AppColors.endGradyPrimary],
               ),
               borderRadius: BorderRadius.circular(14),
             ),

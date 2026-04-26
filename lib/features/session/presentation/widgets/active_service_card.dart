@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Core/Theme/app_colors.dart';
 import 'package:gap/gap.dart';
 
 class ActiveServiceCard extends StatelessWidget {
@@ -16,7 +17,7 @@ class ActiveServiceCard extends StatelessWidget {
         ),
         child: Row(
           children: const [
-            Icon(Icons.local_car_wash, color: Color(0xff7B61FF)),
+            Icon(Icons.local_car_wash, color: AppColors.primary),
             Gap(10),
             Expanded(
               child: Text(
@@ -24,7 +25,7 @@ class ActiveServiceCard extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
             ),
-            Icon(Icons.check_circle, color: Color(0xff7B61FF)),
+            Icon(Icons.check_circle, color: AppColors.primary),
           ],
         ),
       ),

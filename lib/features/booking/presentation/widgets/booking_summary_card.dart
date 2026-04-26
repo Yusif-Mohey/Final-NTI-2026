@@ -27,7 +27,7 @@ class BookingSummaryCard extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         gradient: const LinearGradient(
-          colors: [AppColors.primary, Color(0xFF9F67EA)],
+          colors: [AppColors.primary, AppColors.endGradyPrimary],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
